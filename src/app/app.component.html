@@ -12,15 +12,12 @@
       <div class="custom-file mb-3 mt-4">
         <input
           type="file"
-          class="custom-file-input"
+          class="form-control"
           id="validatedCustomFile"
           required
           (change)="fileChangeEvent($event)"
           #InputFile
         />
-        <label class="custom-file-label" for="validatedCustomFile"
-          >Choose file...</label
-        >
         <div class="invalid-feedback">Example invalid custom file feedback</div>
       </div>
 
@@ -118,21 +115,15 @@
         </button>
       </div>
       <div *ngIf="showCropper" class="mb-3 mt-2">
-        <div class="input-group is-invalid">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="validatedInputGroupPrepend"
-              >Rotate</span
-            >
-          </div>
-          <input
-            class="form-control"
-            aria-describedby="validatedInputGroupPrepend"
-            [(ngModel)]="rotation"
-            placeholder="Rotation Degree"
-            type="number"
-            (keyup)="updateRotation()"
-            required
-          />
+        <div class="input-group">
+          <span class="input-group-text">Rotate</span>
+          <input class="form-control"
+          aria-describedby="validatedInputGroupPrepend"
+          [(ngModel)]="rotation"
+          placeholder="Rotation Degree"
+          type="number"
+          (keyup)="updateRotation()"
+          required>
         </div>
       </div>
       <img
