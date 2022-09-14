@@ -1,135 +1,151 @@
-<div class="d-flex justify-content-center">
-  <div style="width: 320px">
-    <div class="custom-file mb-3 mt-4">
-      <input
-        type="file"
-        class="custom-file-input"
-        id="validatedCustomFile"
-        required
-        (change)="fileChangeEvent($event)"
-        #InputFile
-      />
-      <label class="custom-file-label" for="validatedCustomFile"
-        >Choose file...</label
-      >
-      <div class="invalid-feedback">Example invalid custom file feedback</div>
-    </div>
-
-    <div>
-      <image-cropper
-        [imageChangedEvent]="imageChangedEvent"
-        [maintainAspectRatio]="true"
-        [containWithinAspectRatio]="containWithinAspectRatio"
-        [aspectRatio]="1 / 1"
-        [resizeToWidth]="256"
-        [cropperMinWidth]="128"
-        [onlyScaleDown]="true"
-        [roundCropper]="true"
-        [canvasRotation]="canvasRotation"
-        [transform]="transform"
-        [alignImage]="'center'"
-        [imageURL]="!InputFile.value ? imgURL : InputFile.value"
-        [style.display]="showCropper ? null : 'none'"
-        format="png"
-        (imageCropped)="imageCropped($event)"
-        (imageLoaded)="imageLoaded()"
-        (cropperReady)="cropperReady($event)"
-        (loadImageFailed)="loadImageFailed()"
-        class="w-100"
-      ></image-cropper>
-    </div>
-    <div class="form-group">
-      <input
-        type="range"
-        min="-180"
-        max="180"
-        value="0"
-        step="0.5"
-        class="w-100 mt-2 mb-2 form-control-range"
-        [(ngModel)]="rotation"
-        (input)="updateRotation()"
-      />
-    </div>
-    <div class="btn-group w-100" role="group" aria-label="Basic example">
-      <button
-        (click)="rotateLeft()"
-        class="btn btn-light"
-        title="Rotate Left"
-        data-toggle="tooltip"
-        data-placement="left"
-      >
-        <i class="fa fa-rotate-left"></i>
-      </button>
-      <button
-        (click)="rotateRight()"
-        class="btn btn-light"
-        title="Rotate Right"
-      >
-        <i class="fa fa-rotate-right"></i>
-      </button>
-      <button
-        (click)="flipHorizontal()"
-        class="btn btn-light"
-        title="Flip Horizontal"
-      >
-        <i class="fa fa-arrows-h"></i>
-      </button>
-      <button
-        (click)="flipVertical()"
-        class="btn btn-light"
-        title="Flip Vertical"
-      >
-        <i class="fa fa-arrows-v"></i>
-      </button>
-      <button
-        (click)="toggleContainWithinAspectRatio()"
-        class="btn btn-light"
-        [title]="
-          containWithinAspectRatio
-            ? 'Fill Aspect Ratio'
-            : 'Contain Within Aspect Ratio'
-        "
-      >
-        <i
-          class="fa"
-          [ngClass]="{
-            'fa-expand': !containWithinAspectRatio,
-            'fa-compress': containWithinAspectRatio
-          }"
-        ></i>
-      </button>
-      <button (click)="zoomOut()" class="btn btn-light" title="Zoom -">
-        <i class="fa fa-search-minus"></i>
-      </button>
-      <button (click)="zoomIn()" class="btn btn-light" title="Zoom +">
-        <i class="fa fa-search-plus"></i>
-      </button>
-      <button (click)="resetImage()" class="btn btn-light" title="Refresh">
-        <i class="fa fa-refresh"></i>
-      </button>
-    </div>
-    <div *ngIf="showCropper" class="mb-3 mt-2">
-      <div class="input-group is-invalid">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="validatedInputGroupPrepend"
-            >Rotate</span
-          >
-        </div>
+<div
+  class="
+    d-flex
+    flex-column
+    w-100
+    h-100
+    align-items-center
+    justify-content-between
+  "
+>
+  <div class="d-flex justify-content-center">
+    <div style="width: 320px">
+      <div class="custom-file mb-3 mt-4">
         <input
-          class="form-control"
-          aria-describedby="validatedInputGroupPrepend"
-          [(ngModel)]="rotation"
-          placeholder="Rotation Degree"
-          type="number"
-          (keyup)="updateRotation()"
+          type="file"
+          class="custom-file-input"
+          id="validatedCustomFile"
           required
+          (change)="fileChangeEvent($event)"
+          #InputFile
+        />
+        <label class="custom-file-label" for="validatedCustomFile"
+          >Choose file...</label
+        >
+        <div class="invalid-feedback">Example invalid custom file feedback</div>
+      </div>
+
+      <div>
+        <image-cropper
+          [imageChangedEvent]="imageChangedEvent"
+          [maintainAspectRatio]="true"
+          [containWithinAspectRatio]="containWithinAspectRatio"
+          [aspectRatio]="1 / 1"
+          [resizeToWidth]="256"
+          [cropperMinWidth]="128"
+          [onlyScaleDown]="true"
+          [roundCropper]="true"
+          [canvasRotation]="canvasRotation"
+          [transform]="transform"
+          [alignImage]="'center'"
+          [imageURL]="!InputFile.value ? imgURL : InputFile.value"
+          [style.display]="showCropper ? null : 'none'"
+          format="png"
+          (imageCropped)="imageCropped($event)"
+          (imageLoaded)="imageLoaded()"
+          (cropperReady)="cropperReady($event)"
+          (loadImageFailed)="loadImageFailed()"
+          class="w-100"
+        ></image-cropper>
+      </div>
+      <div class="form-group">
+        <input
+          type="range"
+          min="-180"
+          max="180"
+          value="0"
+          step="0.5"
+          class="w-100 mt-2 mb-2 form-control-range"
+          [(ngModel)]="rotation"
+          (input)="updateRotation()"
         />
       </div>
+      <div class="btn-group w-100" role="group" aria-label="Basic example">
+        <button
+          (click)="rotateLeft()"
+          class="btn btn-light"
+          title="Rotate Left"
+          data-toggle="tooltip"
+          data-placement="left"
+        >
+          <i class="fa fa-rotate-left"></i>
+        </button>
+        <button
+          (click)="rotateRight()"
+          class="btn btn-light"
+          title="Rotate Right"
+        >
+          <i class="fa fa-rotate-right"></i>
+        </button>
+        <button
+          (click)="flipHorizontal()"
+          class="btn btn-light"
+          title="Flip Horizontal"
+        >
+          <i class="fa fa-arrows-h"></i>
+        </button>
+        <button
+          (click)="flipVertical()"
+          class="btn btn-light"
+          title="Flip Vertical"
+        >
+          <i class="fa fa-arrows-v"></i>
+        </button>
+        <button
+          (click)="toggleContainWithinAspectRatio()"
+          class="btn btn-light"
+          [title]="
+            containWithinAspectRatio
+              ? 'Fill Aspect Ratio'
+              : 'Contain Within Aspect Ratio'
+          "
+        >
+          <i
+            class="fa"
+            [ngClass]="{
+              'fa-expand': !containWithinAspectRatio,
+              'fa-compress': containWithinAspectRatio
+            }"
+          ></i>
+        </button>
+        <button (click)="zoomOut()" class="btn btn-light" title="Zoom -">
+          <i class="fa fa-search-minus"></i>
+        </button>
+        <button (click)="zoomIn()" class="btn btn-light" title="Zoom +">
+          <i class="fa fa-search-plus"></i>
+        </button>
+        <button (click)="resetImage()" class="btn btn-light" title="Refresh">
+          <i class="fa fa-refresh"></i>
+        </button>
+      </div>
+      <div *ngIf="showCropper" class="mb-3 mt-2">
+        <div class="input-group is-invalid">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="validatedInputGroupPrepend"
+              >Rotate</span
+            >
+          </div>
+          <input
+            class="form-control"
+            aria-describedby="validatedInputGroupPrepend"
+            [(ngModel)]="rotation"
+            placeholder="Rotation Degree"
+            type="number"
+            (keyup)="updateRotation()"
+            required
+          />
+        </div>
+      </div>
+      <img
+        *ngIf="showCropper"
+        [src]="croppedImage"
+        [style.border]="croppedImage ? '10px solid #C5C5C5' : 'none'"
+      />
     </div>
-    <img
-      *ngIf="showCropper"
-      [src]="croppedImage"
-      [style.border]="croppedImage ? '10px solid #C5C5C5' : 'none'"
-    />
+  </div>
+  <div class="mt-auto">
+    <a href="https://stackblitz.com/edit/image-cropper-zigxta"
+      >Edit on <b>Stackblitz</b></a
+    >
   </div>
 </div>
