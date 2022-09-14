@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
     this.imageChangedEvent = event;
   }
 
-  imageCropped(event: ImageCroppedEvent) {
+  imageCropped(event: ImageCroppedEvent | any) {
     this.croppedImage = event.base64;
     console.log(event, base64ToFile(event.base64));
   }

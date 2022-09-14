@@ -29,16 +29,16 @@ import { MoveTypes } from '../interfaces/move-start.interface';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ImageCropperComponent implements OnChanges, OnInit {
-    private Hammer: HammerStatic = typeof window !== 'undefined'
+    private Hammer: HammerStatic | any= typeof window !== 'undefined'
         ? (window as any).Hammer as HammerStatic
         : null;
-    private originalImage: HTMLImageElement | null;
-    private transformedImage: HTMLImageElement;
-    private originalBase64: string;
-    private transformedBase64: string;
-    private moveStart: MoveStart;
-    private originalSize: Dimensions;
-    private transformedSize: Dimensions;
+    private originalImage: HTMLImageElement | any;
+    private transformedImage: HTMLImageElement | any;
+    private originalBase64: string | any;
+    private transformedBase64: string | any;
+    private moveStart: MoveStart | any;
+    private originalSize: Dimensions | any;
+    private transformedSize: Dimensions | any;
     private setImageMaxSizeRetries = 0;
     private cropperScaledMinWidth = 20;
     private cropperScaledMinHeight = 20;
@@ -46,20 +46,20 @@ export class ImageCropperComponent implements OnChanges, OnInit {
     private autoRotateSupported: Promise<boolean> = supportsAutomaticRotation();
     private stepSize = 3;
 
-    safeImgDataUrl: SafeUrl | string;
-    safeTransformStyle: SafeStyle | string;
+    safeImgDataUrl: SafeUrl | string | any;
+    safeTransformStyle: SafeStyle | string | any;
     marginLeft: SafeStyle | string = '0px';
-    maxSize: Dimensions;
+    maxSize: Dimensions | any;
     imageVisible = false;
     moveTypes = MoveTypes;
 
-    @ViewChild('wrapper', {static: true}) wrapper: ElementRef;
-    @ViewChild('sourceImage', {static: false}) sourceImage: ElementRef;
+    @ViewChild('wrapper', {static: true}) wrapper: ElementRef | any;
+    @ViewChild('sourceImage', {static: false}) sourceImage: ElementRef | any;
 
     @Input() imageChangedEvent: any;
-    @Input() imageURL: string;
-    @Input() imageBase64: string;
-    @Input() imageFile: File;
+    @Input() imageURL: string | any;
+    @Input() imageBase64: string | any;
+    @Input() imageFile: File | any;
     @Input() format: 'png' | 'jpeg' | 'bmp' | 'webp' | 'ico' = 'png';
     @Input() maintainAspectRatio = true;
     @Input() transform: ImageTransform = {};
@@ -76,7 +76,7 @@ export class ImageCropperComponent implements OnChanges, OnInit {
     @Input() onlyScaleDown = false;
     @Input() imageQuality = 92;
     @Input() autoCrop = true;
-    @Input() backgroundColor: string;
+    @Input() backgroundColor: string | any;
     @Input() containWithinAspectRatio = false;
     @Input() hideResizeSquares = false;
     @Input() cropper: CropperPosition = {
@@ -255,7 +255,7 @@ export class ImageCropperComponent implements OnChanges, OnInit {
         img.onerror = () => this.loadImageFailed.emit();
         img.onload = () => {
             const canvas = document.createElement('canvas');
-            const context = canvas.getContext('2d');
+            const context:any = canvas.getContext('2d');
             canvas.width = img.width;
             canvas.height = img.height;
             context.drawImage(img, 0, 0);
@@ -283,7 +283,7 @@ export class ImageCropperComponent implements OnChanges, OnInit {
         const canvas = document.createElement('canvas');
         canvas.width = transformedSize.width;
         canvas.height = transformedSize.height;
-        const ctx = canvas.getContext('2d');
+        const ctx:any = canvas.getContext('2d');
         ctx.setTransform(
             this.exifTransform.flip ? -1 : 1,
             0,
@@ -333,7 +333,7 @@ export class ImageCropperComponent implements OnChanges, OnInit {
         };
     }
 
-    private setTransformedImage(transformedBase64): Promise<void> {
+    private setTransformedImage(transformedBase64: any): Promise<void> {
         return new Promise<void>((resolve) => {
             this.transformedBase64 = transformedBase64;
             this.safeImgDataUrl = this.sanitizer.bypassSecurityTrustResourceUrl(transformedBase64);
@@ -449,7 +449,7 @@ export class ImageCropperComponent implements OnChanges, OnInit {
         }
     }
 
-    private keyboardMoveCropper(event) {
+    private keyboardMoveCropper(event:any) {
         const keyboardWhiteList: string[] = ['ArrowUp', 'ArrowDown', 'ArrowRight', 'ArrowLeft'];
         if (!(keyboardWhiteList.includes(event.key))) {
             return;
