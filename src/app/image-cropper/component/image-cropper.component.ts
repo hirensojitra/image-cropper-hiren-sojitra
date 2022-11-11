@@ -112,20 +112,20 @@ export class ImageCropperComponent implements OnChanges, OnInit {
         this.onChangesInputImage(changes);
 
         if (this.originalImage && this.originalImage.complete && this.exifTransform
-            && (changes.containWithinAspectRatio || changes.canvasRotation)) {
+            && (changes?.['containWithinAspectRatio'] || changes?.['canvasRotation'])) {
             this.transformOriginalImage();
         }
-        if (changes.cropper) {
+        if (changes?.['cropper']) {
             this.setMaxSize();
             this.setCropperScaledMinSize();
             this.checkCropperPosition(false);
             this.doAutoCrop();
             this.cd.markForCheck();
         }
-        if (changes.aspectRatio && this.imageVisible) {
+        if (changes?.['aspectRatio'] && this.imageVisible) {
             this.resetCropperPosition();
         }
-        if (changes.transform) {
+        if (changes?.['transform']) {
             this.transform = this.transform || {};
             this.setCssTransform();
             this.doAutoCrop();
@@ -133,19 +133,19 @@ export class ImageCropperComponent implements OnChanges, OnInit {
     }
 
     private onChangesInputImage(changes: SimpleChanges) {
-        if (changes.imageChangedEvent || changes.imageURL || changes.imageBase64 || changes.imageFile) {
+        if (changes?.['imageChangedEvent'] || changes?.['imageURL'] || changes?.['imageBase64'] || changes?.['imageFile']) {
             this.initCropper();
         }
-        if (changes.imageChangedEvent && this.isValidImageChangedEvent()) {
+        if (changes?.['imageChangedEvent'] && this.isValidImageChangedEvent()) {
             this.loadImageFile(this.imageChangedEvent.target.files[0]);
         }
-        if (changes.imageURL && this.imageURL) {
+        if (changes?.['imageURL'] && this.imageURL) {
             this.loadImageFromURL(this.imageURL);
         }
-        if (changes.imageBase64 && this.imageBase64) {
+        if (changes?.['imageBase64'] && this.imageBase64) {
             this.loadBase64Image(this.imageBase64);
         }
-        if (changes.imageFile && this.imageFile) {
+        if (changes?.['imageFile'] && this.imageFile) {
             this.loadImageFile(this.imageFile);
         }
     }

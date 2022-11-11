@@ -1,0 +1,61 @@
+<div style="width: 320px">
+    <div class="custom-file mb-3 mt-4">
+        <input type="file" class="form-control" id="validatedCustomFile" required (change)="image.fileChangeEvent($event)" #InputFile />
+        <div class="invalid-feedback">Example invalid custom file feedback</div>
+    </div>
+    <div>
+        <image-cropper [imageChangedEvent]="image.imageChangedEvent" [maintainAspectRatio]="true" [containWithinAspectRatio]="image.containWithinAspectRatio" [aspectRatio]="1 / 1" [resizeToWidth]="256" [cropperMinWidth]="128" [onlyScaleDown]="true" [roundCropper]="true"
+            [canvasRotation]="image.canvasRotation" [transform]="image.transform" [alignImage]="'center'" [imageURL]="InputFile.value" [style.display]="image.showCropper ? null : 'none'" format="png" (imageCropped)="image.imageCropped($event)" (imageLoaded)="image.imageLoaded()"
+            (cropperReady)="image.cropperReady($event)" (loadImageFailed)="image.loadImageFailed()" class="w-100" *ngIf="InputFile.value"></image-cropper>
+    </div>
+    <div class="form-group" *ngIf="InputFile.value">
+        <input type="range" min="-180" max="180" value="0" step="0.5" class="w-100 mt-2 mb-2 form-control-range" [(ngModel)]="image.rotation" (input)="image.updateRotation()" />
+    </div>
+    <div class="btn-group w-100" role="group" aria-label="Basic example" *ngIf="InputFile.value">
+        <button (click)="image.rotateLeft()" class="btn btn-light" title="Rotate Left" data-toggle="tooltip" data-placement="left">
+  <i class="fa fa-rotate-left"></i>
+</button>
+        <button (click)="image.rotateRight()" class="btn btn-light" title="Rotate Right">
+  <i class="fa fa-rotate-right"></i>
+</button>
+        <button (click)="image.flipHorizontal()" class="btn btn-light" title="Flip Horizontal">
+  <i class="fa fa-arrows-h"></i>
+</button>
+        <button (click)="image.flipVertical()" class="btn btn-light" title="Flip Vertical">
+  <i class="fa fa-arrows-v"></i>
+</button>
+        <button (click)="image.toggleContainWithinAspectRatio()" class="btn btn-light" [title]="
+        image.containWithinAspectRatio
+      ? 'Fill Aspect Ratio'
+      : 'Contain Within Aspect Ratio'
+  ">
+  <i
+    class="fa"
+    [ngClass]="{
+      'fa-expand': !image.containWithinAspectRatio,
+      'fa-compress': image.containWithinAspectRatio
+    }"
+  ></i>
+</button>
+        <button (click)="image.zoomOut()" class="btn btn-light" title="Zoom -">
+  <i class="fa fa-search-minus"></i>
+</button>
+        <button (click)="image.zoomIn()" class="btn btn-light" title="Zoom +">
+  <i class="fa fa-search-plus"></i>
+</button>
+        <button (click)="image.resetImage()" class="btn btn-light" title="Refresh">
+  <i class="fa fa-refresh"></i>
+</button>
+    </div>
+    <!-- <div *ngIf="showCropper" class="mb-3 mt-2">
+        <div class="input-group">
+            <span class="input-group-text">Rotate</span>
+            <input class="form-control" aria-describedby="validatedInputGroupPrepend" [(ngModel)]="rotation" placeholder="Rotation Degree" type="number" (keyup)="updateRotation()" required>
+        </div>
+    </div> -->
+    <!-- <img *ngIf="image.showCropper" [src]="image.croppedImage" [style.border]="image.croppedImage ? '10px solid #C5C5C5' : 'none'" style="border-radius: 50%;" /> -->
+    <div class="d-flex align-items-center justify-content-between">
+        <div class="btn btn-primary w-100 me-1" [ngClass]="{'disabled':!image.showCropper}" [mat-dialog-close]="image.croppedImage">Save</div>
+        <div class="btn btn-light w-100 ms-1" (click)="onNoClick()">Cancel</div>
+    </div>
+</div>
