@@ -1,14 +1,16 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ImageProcessService } from './services/image-process.service';
-export interface DialogData {
-  animal: string;
-  name: string;
-}
+
+import * as htmlToImage from 'html-to-image';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 export interface DialogData {
   animal: string;
   name: string;
+}
+interface Village {
+  viewValue: string;
 }
 @Component({
   selector: 'my-app',
@@ -20,19 +22,168 @@ export class AppComponent implements OnInit {
   animal: string = '';
   name: string = '';
   cropedImg: string = '';
+  imgSelected: string = '';
+  amreli: Village[] = [
+    { viewValue: 'અમરપુર વરૂડી' },
+    { viewValue: 'અમરેલી' },
+    { viewValue: 'આંકડીયા નાના' },
+    { viewValue: 'મોટા આંકડીયા' },
+    { viewValue: 'ઇશ્વરીયા' },
+    { viewValue: 'કમીગઢ' },
+    { viewValue: 'કાઠમા' },
+    { viewValue: 'કેરાળા' },
+    { viewValue: 'કેરીયાચાડ' },
+    { viewValue: 'કેરીયાનાગસ' },
+    { viewValue: 'ખડખંભાળીયા' },
+    { viewValue: 'ખીજડીયા ખારી' },
+    { viewValue: 'ખીજડીયા રાદડીયા' },
+    { viewValue: 'ગાવડકા' },
+    { viewValue: 'ગીરીયા' },
+    { viewValue: 'ગોખરવાળા નાના' },
+    { viewValue: 'ગોખરવાળા મોટા' },
+    { viewValue: 'ચક્કરગઢ' },
+    { viewValue: 'ચાડીયા' },
+    { viewValue: 'ચાંદગઢ' },
+    { viewValue: 'ચાંપાથળ' },
+    { viewValue: 'ચિત્તલ' },
+    { viewValue: 'જશવંતગઢ' },
+    { viewValue: 'જાળીયા' },
+    { viewValue: 'ટીંબલા' },
+    { viewValue: 'ટીંબા' },
+    { viewValue: 'ઢોલરવા' },
+    { viewValue: 'તરકતળાવ' },
+    { viewValue: 'તરવડા' },
+    { viewValue: 'થોરડી' },
+    { viewValue: 'દહીંડા' },
+    { viewValue: 'દેવરાજીયા' },
+    { viewValue: 'દેવળીયા' },
+    { viewValue: 'નવા ખીજડીયા' },
+    { viewValue: 'પાણીયા' },
+    { viewValue: 'પીઠવાજાળ' },
+    { viewValue: 'પીપળલગ' },
+    { viewValue: 'ફતેપુર' },
+    { viewValue: 'બક્ષીપુર' },
+    { viewValue: 'બાબાપુર' },
+    { viewValue: 'ભંડારીયા નાના' },
+    { viewValue: 'ભંડારીયા મોટા' },
+    { viewValue: 'માચીયાળા નાના' },
+    { viewValue: 'માચીયાળા મોટા' },
+    { viewValue: 'માલવણ' },
+    { viewValue: 'માળીલા' },
+    { viewValue: 'માંગવાપાળ' },
+    { viewValue: 'માંડવડા નાના' },
+    { viewValue: 'માંડવડા મોટા' },
+    { viewValue: 'મેડી' },
+    { viewValue: 'મોણપુર' },
+    { viewValue: 'રાજસ્‍થળી' },
+    { viewValue: 'રાંઢીયા' },
+    { viewValue: 'રીકડીયા' },
+    { viewValue: 'રંગપુર' },
+    { viewValue: 'લાપાળિયા' },
+    { viewValue: 'લાલાવદર' },
+    { viewValue: 'વડેરા' },
+    { viewValue: 'વરસડા' },
+    { viewValue: 'વાંકીયા' },
+    { viewValue: 'વિઠ્ઠલપુર' },
+    { viewValue: 'વેણીવદર' },
+    { viewValue: 'શેડુભાર' },
+    { viewValue: 'શંભુપરા' },
+    { viewValue: 'સણોસરા' },
+    { viewValue: 'સરંભડા' },
+    { viewValue: 'સાજીયાવદર' },
+    { viewValue: 'સાંગાડેરી' },
+    { viewValue: 'સુરગપુર' },
+    { viewValue: 'સોનારીયા' },
+    { viewValue: 'હરીપુરા' },
+  ];
+  kukavav: Village[] = [
+{viewValue:'અમરાપુર'},
+{viewValue:'અનીડા'},
+{viewValue:'અરજણસુખ'},
+{viewValue:'બાદનપુર જુના'},
+{viewValue:'બાદનપુર નવા'},
+{viewValue:'બાંભણીયા'},
+{viewValue:'બાંટવા દેવલી'},
+{viewValue:'બરવાલા બાવલ'},
+{viewValue:'બરવાલા બાવીશી'},
+{viewValue:'ભાયાવદર'},
+{viewValue:'ભુખલી માંથળી'},
+{viewValue:'દડવા રાંદલ'},
+{viewValue:'દેવળકી'},
+{viewValue:'દેવગામ'},
+{viewValue:'ઇશ્વરીયા'},
+{viewValue:'જીથુડી'},
+{viewValue:'જંગર'},
+{viewValue:'ખડખડ'},
+{viewValue:'ખજુરી'},
+{viewValue:'ખજુરી પીપળીયા'},
+{viewValue:'ખાખરીયા'},
+{viewValue:'ખીજડીયા હનુમાન'},
+{viewValue:'ખીજડીયા ખાન'},
+{viewValue:'કોલડા'},
+{viewValue:'કુંકાવાવ મોટી'},
+{viewValue:'કુંકાવાવ નાની'},
+{viewValue:'લાખાપાદર'},
+{viewValue:'લુણી ધાર'},
+{viewValue:'માયા પાદર'},
+{viewValue:'મેધા પીપળીયા'},
+{viewValue:'મોરવાડા'},
+{viewValue:'નાજાપુર'},
+{viewValue:'પીપળીયા ધુંધીયા'},
+{viewValue:'રામપુર'},
+{viewValue:'સનાળા'},
+{viewValue:'સનાળી'},
+{viewValue:'સારંગપુર'},
+{viewValue:'સુર્ય પ્રતાપગઢ'},
+{viewValue:'તાલાળી'},
+{viewValue:'તરધરી'},
+{viewValue:'તોરી'},
+{viewValue:'ઉજળા મોટા'},
+{viewValue:'ઉજળા નાના'},
+{viewValue:'વડીયા'},
+{viewValue:'વાવડી'}
+  ];
+  vill=[this.amreli,this.kukavav]
+
+  selectImg(e: any) {
+    this.imgSelected = e
+  }
+  reset() { this.imgSelected = ''; this.cropedImg = '', this.downLoadLink = false }
+  downLoadLink: boolean = false;
+
+  generateImage() {
+    var node: any = document.getElementById('print-area');
+    var link: any = document.getElementById('print-area-link');
+
+    this.downLoadLink = true;
+    htmlToImage.toPng(node)
+      .then(function (dataUrl) {
+        console.log(link)
+        link.setAttribute('href', dataUrl);
+      })
+      .catch(function (error) {
+        console.error('oops, something went wrong!', error);
+      });
+  }
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-      data: {name: this.name, animal: this.animal},
+      data: { name: this.name, animal: this.animal },
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      this.cropedImg = (result)?result:this.cropedImg;
+      this.cropedImg = (result) ? result : this.cropedImg;
     });
   }
-  constructor(public image: ImageProcessService, public dialog: MatDialog){
-    
+  constructor(public image: ImageProcessService, public dialog: MatDialog, private formBuilder: FormBuilder) {
+
   }
+  post: any = '';
+  formGroup: FormGroup = this.formBuilder.group({
+    'village': [null, [Validators.required]],
+    'name': [null, Validators.required],
+    'taluka':[0, Validators.required]
+  });
   ngOnInit() {
     // this.fileChangeEvent({
     //   imageURL:
@@ -49,7 +200,7 @@ export class DialogOverviewExampleDialog {
     public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
     public image: ImageProcessService
-  ) {}
+  ) { }
 
   onNoClick(): void {
     this.dialogRef.close();

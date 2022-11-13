@@ -1,59 +1,90 @@
-<div
-  class="
-    d-flex
-    flex-column
-    w-100
-    h-100
-    align-items-center
-    justify-content-center
-  "
-  style="height: 100vh !important;"
->
-  <div class="container">
-    <div class="col-6">
-      <img
-        src="https://mdbootstrap.com/img/Photos/Others/placeholder-avatar.jpg"
-        class="w-100"
-        alt=""
-      />
+<div class="selection-tab" *ngIf="!imgSelected">
+    <div class="container">
+        <div class="row pt-3">
+            <div class="col-12 text-center">
+                <h2 class="mt-4">કૌશિકભાઈ વેકરીયા</h2>
+                <p>ઉમેદવાર વિધાનસભા, અમરેલી - ૯૫</p>
+            </div>
+            <div class="col-md-3 col-sm-4 col-6 mb-1">
+                <img src="assets/img/main/KKV-01.png" class="w-100 img-thumbnail" alt="" (click)="selectImg('assets/img/main/KKV-01.png')" />
+                <h5 class="mt-3 text-secondary">Story Photo 01</h5>
+            </div>
+            <div class="col-md-3 col-sm-4 col-6 mb-1">
+                <img src="assets/img/main/KKV-02.png" class="w-100 img-thumbnail" alt="" (click)="selectImg('assets/img/main/KKV-02.png')" />
+                <h5 class="mt-3 text-secondary">Story Photo 02</h5>
+            </div>
+            <div class="col-md-3 col-sm-4 col-6 mb-1">
+                <img src="assets/img/main/KKV-03.png" class="w-100 img-thumbnail" alt="" (click)="selectImg('assets/img/main/KKV-03.png')" />
+                <h5 class="mt-3 text-secondary">Story Photo 03</h5>
+            </div>
+            <div class="col-12">
+                <div class="mt-auto pt-2 pb-2">
+                    <a href="https://fb.com/SOJITRAHIREN" target="_blank">created by <b>Hiren Sojitra</b></a>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
-<div
-  class="
-    d-flex
-    flex-column
-    w-100
-    h-100
-    align-items-center
-    justify-content-center
-  "
-  style="height: 100vh !important;"
->
-  <div class="mt-auto">
-    <div class="d-flex justify-content-center mb-4">
-      <img
-        [src]="
+<div class="print-area" id="print-area" *ngIf="imgSelected && cropedImg && formGroup.valid" [ngStyle]="{'background-image': 'url(' + imgSelected + ')'}">
+    <div class="d-flex mt-auto align-items-center w-100">
+        <div class="flex-grow-1 text-end" style="background: #333;
+        padding: 1rem 2rem 1rem 0;
+        color: #FFF;">
+            <p style="font-size: 50px;
+            color: #FFF">{{formGroup.controls['name'].value}}</p>
+            <p style="font-size: 40px; color: #DDD">{{(vill[formGroup.controls['taluka'].value+0][formGroup.controls['village'].value+0].viewValue)}}, <small>{{(!formGroup.controls['taluka'].value)?'અમરેલી':'કુંકાવાવ'}}</small><span style="font-size: 22px;
+              display: block;">વિધાનસભા સીટ, અમરેલી-કુંકાવાવ-વડિયા</span></p>
+        </div>
+        <img [src]="cropedImg" class="thumb-img" style="width: 350px;
+        padding: 10px;
+        margin: 80px;outline:10px solid #FFF; background: #333;">
+    </div>
+</div>
+<div class="d-flex flex-column data-tab align-items-center justify-content-center" *ngIf="imgSelected">
+    <div class="mt-auto" style="width: 320px;">
+        <div class="d-flex justify-content-center mb-4">
+            <img [src]="
           cropedImg
             ? cropedImg
             : 'https://mdbootstrap.com/img/Photos/Others/placeholder-avatar.jpg'
-        "
-        class="rounded-circle"
-        alt="example placeholder"
-        style="width: 200px;"
-      />
+        " class="rounded-circle thumb-img" alt="example placeholder" style="width: 300px;" />
+        </div>
+        <div class="d-flex flex-column justify-content-center">
+            <div class="btn btn-primary btn-rounded">
+                <label class="form-label text-white m-1" (click)="openDialog()">{{ cropedImg ? 'તમારો ફોટો બદલાવો' : 'તમારો ફોટો અપલોડ કરો' }}</label>
+            </div>
+
+            <div class="container" novalidate>
+                <form [formGroup]="formGroup" class="d-flex flex-column mt-3">
+                    <mat-form-field class="form-element">
+                        <input matInput placeholder="તમારું નામ અહી લખો" formControlName="name">
+                    </mat-form-field>
+                    <mat-form-field class="form-element">
+                        <mat-label>Taluko</mat-label>
+                        <mat-select formControlName="taluka">
+                            <mat-option [value]="0">અમરેલી</mat-option>
+                            <mat-option [value]="1">કુકાવાવ</mat-option>
+                        </mat-select>
+
+                    </mat-form-field>
+                    <mat-form-field class="form-element">
+                        <mat-label>ગામ નું નામ</mat-label>
+
+                        <mat-select formControlName="village">
+                            <mat-option *ngFor="let village of vill[formGroup.controls['taluka'].value+0]; let i = index" [value]="i">
+                                {{village.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </form>
+            </div>
+            <a (click)="generateImage();" class="btn btn-secondary btn-rounded mt-3" [ngClass]="{'disabled':!formGroup.valid || !cropedImg}" title="{{formGroup.controls['name'].value}}" download>સબમિટ કરો</a>
+            <a id="print-area-link" class="btn btn-warning btn-rounded mt-3" target="_blank" [ngClass]="{'disabled':!formGroup.valid || !cropedImg || !downLoadLink}" title="{{formGroup.controls['name'].value}}" download>ડાઉનલોડ કરો</a>
+            <button (click)="reset()" class="btn btn-info btn-rounded mt-3">રીસેટ કરો</button>
+        </div>
     </div>
-    <div class="d-flex justify-content-center">
-      <div class="btn btn-primary btn-rounded">
-        <label class="form-label text-white m-1" (click)="openDialog()"
-          >{{ cropedImg ? 'Change' : 'Upload' }} Photo</label
-        >
-      </div>
+
+    <div class="mt-auto pt-2 p4-2 mb-4">
+        <a href="https://fb.com/SOJITRAHIREN" target="_blank" class="btn btn-secondary">created by <b>Hiren Sojitra</b></a>
     </div>
-  </div>
-  <div class="mt-auto pt-2 pb-2">
-    <a href="https://stackblitz.com/edit/image-cropper-hiren-sojitra"
-      >Edit on <b>Stackblitz</b></a
-    >
-  </div>
 </div>
