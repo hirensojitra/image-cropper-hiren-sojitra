@@ -4,12 +4,12 @@ image-cropper {
 
 .selection-tab {
     min-height: 100vh;
-    background: #FFF;
+    background: #fff;
 }
 
 .data-tab {
     min-height: 100vh;
-    background: #FFF;
+    background: #fff;
 }
 
 .img-thumbnail:hover {
@@ -22,14 +22,174 @@ image-cropper {
 }
 
 .print-area {
-    height: 1920px;
-    width: 1080px;
     z-index: -10;
     position: fixed;
     top: 0;
     left: 0;
     pointer-events: none;
     display: flex;
+    &.story {
+        height: 1920px;
+        width: 1080px;
+        .content-box {
+            display: flex;
+            margin-top: auto;
+            align-items: center;
+            width: 100%;
+            .text-box {
+                flex-grow: 1;
+            }
+            &.style-0 {
+                .text-box {
+                    text-align: left;
+                    background: #333;
+                    padding: 1rem;
+                    color: #fff;
+                    p {
+                        margin: 0;
+                        &.name {
+                            font-size: 50px;
+                            color: #fff;
+                        }
+                        &.place {
+                            font-size: 30px;
+                            color: #ddd;
+                            small {}
+                            span {
+                                font-size: 25px;
+                                display: block;
+                            }
+                        }
+                    }
+                }
+                .thumb-img {
+                    border: 10px solid #f5f5f5;
+                    box-shadow: 0 0 20px rgb(0 0 0 / 25%);
+                    width: 320px;
+                    padding: 10px;
+                    margin: 40px;
+                    outline: 0;
+                    background: #333;
+                }
+            }
+            &.style-1 {
+                .text-box {
+                    text-align: left;
+                    background: #333;
+                    padding: 1rem;
+                    color: #fff;
+                    p {
+                        margin: 0;
+                        &.name {
+                            font-size: 50px;
+                            color: #fff;
+                        }
+                        &.place {
+                            font-size: 30px;
+                            color: #ddd;
+                            small {}
+                            span {
+                                font-size: 25px;
+                                display: block;
+                            }
+                        }
+                    }
+                }
+                .thumb-img {
+                    border: 10px solid #f5f5f5;
+                    box-shadow: 0 0 20px rgb(0 0 0 / 25%);
+                    width: 320px;
+                    padding: 10px;
+                    margin: 40px;
+                    outline: 0;
+                    background: #333;
+                }
+            }
+        }
+    }
+    &.facebook {
+        width: 940px;
+        height: 788px;
+        .content-box {
+            display: flex;
+            margin-top: auto;
+            align-items: center;
+            width: 100%;
+            .text-box {
+                flex-grow: 1;
+            }
+            &.style-0 {
+                .text-box {
+                    text-align: left;
+                    background: #333;
+                    padding: 1rem 2rem;
+                    color: #fff;
+                    display: flex;
+                    align-items: center;
+                    p {
+                        margin: 0 2rem 0 0;
+                        &.name {
+                            font-size: 40px;
+                            color: #fff;
+                        }
+                        &.place {
+                            font-size: 20px;
+                            color: #ddd;
+                            small {}
+                            span {
+                                font-size: 14px;
+                                display: block;
+                            }
+                        }
+                    }
+                }
+                .thumb-img {
+                    width: 170px;
+                    padding: 5px;
+                    margin: 30px;
+                    outline: 0;
+                    background: #333;
+                    border: 8px solid #f5f5f5;
+                    box-shadow: 0 0 20px rgb(0 0 0 / 25%);
+                }
+            }
+            &.style-1 {
+                .text-box {
+                    text-align: left;
+                    background: #333;
+                    padding: 1rem 1rem 1rem 2rem;
+                    color: #fff;
+                    display: flex;
+                    p {
+                        margin: 0 2rem 0 0rem;
+                        &.name {
+                            font-size: 40px;
+                            color: #fff;
+                        }
+                        &.place {
+                            font-size: 20px;
+                            color: #ddd;
+                            small {}
+                            span {
+                                font-size: 14px;
+                                display: block;
+                            }
+                        }
+                    }
+                }
+                .thumb-img {
+                    width: 180px;
+                    padding: 5px;
+                    margin: 30px;
+                    outline: 0;
+                    background: #333;
+                    border: 8px solid #f5f5f5;
+                    box-shadow: 0 0 20px rgb(0 0 0 / 25%);
+                    border-bottom-right-radius: 0;
+                }
+            }
+        }
+    }
     .img-box {
         position: relative;
         height: 100%;
@@ -40,7 +200,7 @@ image-cropper {
             z-index: 0;
         }
     }
-    font-family: 'Shrikhand',
+    font-family: "Shrikhand",
     cursive;
 }
 
@@ -50,5 +210,5 @@ image-cropper {
     display: block;
     border: 10px solid #f5f5f5;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
-    background: #FFF;
+    background: #fff;
 }

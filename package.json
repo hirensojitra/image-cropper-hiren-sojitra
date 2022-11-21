@@ -23,6 +23,7 @@
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.2",
     "core-js": "^3.26.0",
+    "firebase-functions": "^4.0.2",
     "html-to-image": "^1.10.8",
     "jquery": "^3.6.1",
     "popper.js": "^1.16.1",

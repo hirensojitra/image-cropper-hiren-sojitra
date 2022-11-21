@@ -4,41 +4,92 @@
             <div class="col-12 text-center">
                 <h2 class="mt-4">કૌશિકભાઈ વેકરીયા</h2>
                 <p>ઉમેદવાર વિધાનસભા, અમરેલી - ૯૫</p>
+                <p><b>ભારતીય જનતા પાર્ટી</b></p>
             </div>
-            <div class="col-md-3 col-sm-4 col-6 mb-1">
-                <img src="assets/img/main/KKV-01.png" class="w-100 img-thumbnail" alt="" (click)="selectImg('assets/img/main/KKV-01.png')" />
-                <h5 class="mt-3 text-secondary">Story Photo 01</h5>
+            <div class="col-12 mt-4">
+                <h3>ફેસબુક પોસ્ટ ડાઉનલોડ કરો</h3>
             </div>
-            <div class="col-md-3 col-sm-4 col-6 mb-1">
-                <img src="assets/img/main/KKV-02.png" class="w-100 img-thumbnail" alt="" (click)="selectImg('assets/img/main/KKV-02.png')" />
-                <h5 class="mt-3 text-secondary">Story Photo 02</h5>
+            <div class="col-md-3 col-sm-4 col-6 mb-3">
+                <img src="assets/img/main/FB/1.png" class="w-100 img-thumbnail" alt="" (click)="selectImg('assets/img/main/FB/1.png','facebook',1)" />
             </div>
-            <div class="col-md-3 col-sm-4 col-6 mb-1">
-                <img src="assets/img/main/KKV-03.png" class="w-100 img-thumbnail" alt="" (click)="selectImg('assets/img/main/KKV-03.png')" />
-                <h5 class="mt-3 text-secondary">Story Photo 03</h5>
+            <div class="col-md-3 col-sm-4 col-6 mb-3">
+                <img src="assets/img/main/FB/3.png" class="w-100 img-thumbnail" alt="" (click)="selectImg('assets/img/main/FB/3.png','facebook',0)" />
+            </div>
+            <div class="col-md-3 col-sm-4 col-6 mb-3">
+                <img src="assets/img/main/FB/2.png" class="w-100 img-thumbnail" alt="" (click)="selectImg('assets/img/main/FB/2.png','facebook',0)" />
+            </div>
+            <div class="col-12 mt-4">
+                <h3>સ્ટોરી અને સ્ટેટસ ડાઉનલોડ કરો<small class="d-flex" style="font-size: 70%; line-height: 1;">(તમારાં નામ અને ફોટો સાથે)</small></h3>
+            </div>
+            <div class="col-md-3 col-sm-4 col-6 mb-3">
+                <img src="assets/img/main/KKV-05.png" class="w-100 img-thumbnail" alt="" (click)="selectImg('assets/img/main/KKV-05.png','story',1)" />
+            </div>
+            <div class="col-md-3 col-sm-4 col-6 mb-3">
+                <img src="assets/img/main/KKV-01.png" class="w-100 img-thumbnail" alt="" (click)="selectImg('assets/img/main/KKV-01.png','story',1)" />
+            </div>
+            <div class="col-md-3 col-sm-4 col-6 mb-3">
+                <img src="assets/img/main/KKV-02.png" class="w-100 img-thumbnail" alt="" (click)="selectImg('assets/img/main/KKV-02.png','story',1)" />
+            </div>
+            <div class="col-md-3 col-sm-4 col-6 mb-3">
+                <img src="assets/img/main/KKV-03.png" class="w-100 img-thumbnail" alt="" (click)="selectImg('assets/img/main/KKV-03.png','story',1)" />
+            </div>
+            <div class="col-md-3 col-sm-4 col-6 mb-3">
+                <img src="assets/img/main/KKV-04.png" class="w-100 img-thumbnail" alt="" (click)="selectImg('assets/img/main/KKV-04.png','story',1)" />
+            </div>
+
+            <div class="col-12 mt-4">
+                <h3>પ્રોફાઈલ ફોટો ડાઉનલોડ કરો</h3>
+            </div>
+            <div class="col-md-3 col-sm-4 col-6 mb-3">
+                <a href="assets/img/main/DP/1.jpg" download="Kaushik Vekariya - 01" target="_blank"><img src="assets/img/main/DP/1.jpg" class="w-100 img-thumbnail" alt="" /></a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-6 mb-3">
+                <a href="assets/img/main/DP/2.jpg" download="Kaushik Vekariya - 02" target="_blank"><img src="assets/img/main/DP/2.jpg" class="w-100 img-thumbnail" alt="" /></a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-6 mb-3">
+                <a href="assets/img/main/DP/1.jpg" download="Kaushik Vekariya - 03" target="_blank"><img src="assets/img/main/DP/3.jpg" class="w-100 img-thumbnail" alt="" /></a>
             </div>
             <div class="col-12">
-                <div class="mt-auto pt-2 pb-2">
+                <div class="mt-auto pt-2 pb-2 text-center">
                     <a href="https://fb.com/SOJITRAHIREN" target="_blank">created by <b>Hiren Sojitra</b></a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="print-area" id="print-area" *ngIf="imgSelected && cropedImg && formGroup.valid" [ngStyle]="{'background-image': 'url(' + imgSelected + ')'}">
-    <div class="d-flex mt-auto align-items-center w-100">
+<!-- <input type="file" (change)="onFileSelected($event)">
+<button type="button" (click)="uploadFile()" class="btn btn-primary">Upload</button> -->
+<div class="print-area" id="print-area" *ngIf="imgSelected && cropedImg && formGroup.valid" [ngClass]="posterType.type" [ngStyle]="{'background-image': 'url(' + imgSelected + ')'}">
+    <!-- Story Style - 1 -->
+    <div class="content-box style-0" *ngIf="posterType.style==0">
+        <div class="text-box">
+            <p class="name">{{formGroup.controls['name'].value}}</p>
+            <p class="place">{{(vill[formGroup.controls['taluka'].value+0][formGroup.controls['village'].value+0].viewValue)}}, <small>{{(!formGroup.controls['taluka'].value)?'અમરેલી':'કુંકાવાવ'}}</small><span>વિધાનસભા સીટ, અમરેલી-કુંકાવાવ-વડિયા</span></p>
+        </div>
+        <img [src]="cropedImg" class="thumb-img">
+    </div>
+    <div class="content-box style-0" *ngIf="posterType.style==1">
+        <img [src]="cropedImg" class="thumb-img">
+        <div class="text-box">
+            <p class="name">{{formGroup.controls['name'].value}}</p>
+            <p class="place">{{(vill[formGroup.controls['taluka'].value+0][formGroup.controls['village'].value+0].viewValue)}}, <small>{{(!formGroup.controls['taluka'].value)?'અમરેલી':'કુંકાવાવ'}}</small><span>વિધાનસભા સીટ, અમરેલી-કુંકાવાવ-વડિયા</span></p>
+        </div>
+    </div>
+    <!-- Facebook Style - 1 -->
+    <!-- <div class="d-flex mt-auto align-items-center w-100 style-1" *ngIf="posterType.style==1">
+        <img [src]="cropedImg" class="thumb-img" style="width: 250px;
+        padding: 10px;
+        margin: 80px;outline:10px solid #FFF; background: #333;">
         <div class="flex-grow-1 text-end" style="background: #333;
         padding: 1rem 2rem 1rem 0;
         color: #FFF;">
-            <p style="font-size: 50px;
+            <p style="font-size: 30px;
             color: #FFF">{{formGroup.controls['name'].value}}</p>
-            <p style="font-size: 40px; color: #DDD">{{(vill[formGroup.controls['taluka'].value+0][formGroup.controls['village'].value+0].viewValue)}}, <small>{{(!formGroup.controls['taluka'].value)?'અમરેલી':'કુંકાવાવ'}}</small><span style="font-size: 22px;
+            <p style="font-size: 20px; color: #DDD">{{(vill[formGroup.controls['taluka'].value+0][formGroup.controls['village'].value+0].viewValue)}}, <small>{{(!formGroup.controls['taluka'].value)?'અમરેલી':'કુંકાવાવ'}}</small><span style="font-size: 22px;
               display: block;">વિધાનસભા સીટ, અમરેલી-કુંકાવાવ-વડિયા</span></p>
         </div>
-        <img [src]="cropedImg" class="thumb-img" style="width: 350px;
-        padding: 10px;
-        margin: 80px;outline:10px solid #FFF; background: #333;">
-    </div>
+    </div> -->
+
 </div>
 <div class="d-flex flex-column data-tab align-items-center justify-content-center" *ngIf="imgSelected">
     <div class="mt-auto" style="width: 320px;">
@@ -84,7 +135,7 @@
         </div>
     </div>
 
-    <div class="mt-auto pt-2 p4-2 mb-4">
+    <div class="mt-auto pt-2 p4-2 mb-4 text-center">
         <a href="https://fb.com/SOJITRAHIREN" target="_blank" class="btn btn-secondary">created by <b>Hiren Sojitra</b></a>
     </div>
 </div>

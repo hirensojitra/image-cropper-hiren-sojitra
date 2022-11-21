@@ -1,0 +1,448 @@
+[debug] [2022-11-17T19:04:34.329Z] ----------------------------------------------------------------------
+[debug] [2022-11-17T19:04:34.331Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\hiren\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-11-17T19:04:34.332Z] CLI Version:   11.16.1
+[debug] [2022-11-17T19:04:34.332Z] Platform:      win32
+[debug] [2022-11-17T19:04:34.332Z] Node Version:  v18.12.1
+[debug] [2022-11-17T19:04:34.333Z] Time:          Fri Nov 18 2022 00:34:34 GMT+0530 (India Standard Time)
+[debug] [2022-11-17T19:04:34.333Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-11-17T19:04:34.418Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-11-17T19:04:34.418Z] > authorizing via signed-in user (hirensojitra007@gmail.com)
+[debug] [2022-11-17T19:04:34.418Z] [iam] checking project personal-portfolio-demo for permissions ["cloudconfig.configs.get","cloudconfig.configs.update","cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2022-11-17T19:04:34.420Z] > refreshing access token with scopes: []
+[debug] [2022-11-17T19:04:34.424Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-11-17T19:04:34.424Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-11-17T19:04:35.020Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-11-17T19:04:35.022Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-11-17T19:04:35.748Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-portfolio-demo:testIamPermissions [none]
+[debug] [2022-11-17T19:04:35.748Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-portfolio-demo:testIamPermissions x-goog-quota-user=projects/personal-portfolio-demo
+[debug] [2022-11-17T19:04:35.749Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-portfolio-demo:testIamPermissions {"permissions":["cloudconfig.configs.get","cloudconfig.configs.update","cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2022-11-17T19:04:38.039Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-portfolio-demo:testIamPermissions 200
+[debug] [2022-11-17T19:04:38.040Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-portfolio-demo:testIamPermissions {"permissions":["cloudconfig.configs.get","cloudconfig.configs.update","cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2022-11-17T19:04:38.040Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/personal-portfolio-demo/serviceAccounts/personal-portfolio-demo@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2022-11-17T19:04:38.040Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/personal-portfolio-demo/serviceAccounts/personal-portfolio-demo@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2022-11-17T19:04:39.954Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/personal-portfolio-demo/serviceAccounts/personal-portfolio-demo@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2022-11-17T19:04:39.954Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/personal-portfolio-demo/serviceAccounts/personal-portfolio-demo@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2022-11-17T19:04:39.955Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo [none]
+[debug] [2022-11-17T19:04:40.886Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo 200
+[debug] [2022-11-17T19:04:40.887Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo {"projectId":"personal-portfolio-demo","projectNumber":"10003281612","displayName":"Personal Portfolio","name":"projects/personal-portfolio-demo","resources":{"hostingSite":"personal-portfolio-demo","realtimeDatabaseInstance":"personal-portfolio-demo","storageBucket":"personal-portfolio-demo.appspot.com","locationId":"asia-south1"},"state":"ACTIVE","etag":"1_f89fb02a-d745-4270-85a6-d36e07380be9"}
+[debug] [2022-11-17T19:04:40.888Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo [none]
+[debug] [2022-11-17T19:04:41.874Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo 200
+[debug] [2022-11-17T19:04:41.874Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo {"projectId":"personal-portfolio-demo","projectNumber":"10003281612","displayName":"Personal Portfolio","name":"projects/personal-portfolio-demo","resources":{"hostingSite":"personal-portfolio-demo","realtimeDatabaseInstance":"personal-portfolio-demo","storageBucket":"personal-portfolio-demo.appspot.com","locationId":"asia-south1"},"state":"ACTIVE","etag":"1_f89fb02a-d745-4270-85a6-d36e07380be9"}
+[info] 
+[info] === Deploying to 'personal-portfolio-demo'...
+[info] 
+[info] i  deploying database, storage, firestore, functions, hosting, remoteconfig 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] +  functions: Finished running predeploy script. 
+[info] i  database: checking rules syntax... 
+[debug] [2022-11-17T19:04:55.347Z] >>> [apiv2][query] GET https://firebasedatabase.googleapis.com/v1beta/projects/personal-portfolio-demo/locations/-/instances/personal-portfolio-demo [none]
+[debug] [2022-11-17T19:04:56.452Z] <<< [apiv2][status] GET https://firebasedatabase.googleapis.com/v1beta/projects/personal-portfolio-demo/locations/-/instances/personal-portfolio-demo 200
+[debug] [2022-11-17T19:04:56.452Z] <<< [apiv2][body] GET https://firebasedatabase.googleapis.com/v1beta/projects/personal-portfolio-demo/locations/-/instances/personal-portfolio-demo {"name":"projects/10003281612/locations/us-central1/instances/personal-portfolio-demo","project":"projects/10003281612","databaseUrl":"https://personal-portfolio-demo.firebaseio.com","type":"DEFAULT_DATABASE","state":"ACTIVE"}
+[debug] [2022-11-17T19:04:56.459Z] >>> [apiv2][query] PUT https://personal-portfolio-demo.firebaseio.com/.settings/rules.json dryRun=true
+[debug] [2022-11-17T19:04:56.459Z] >>> [apiv2][body] PUT https://personal-portfolio-demo.firebaseio.com/.settings/rules.json "{\n  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */\n  \"rules\": {\n    \".read\": false,\n    \".write\": false\n  }\n}"
+[debug] [2022-11-17T19:04:57.370Z] <<< [apiv2][status] PUT https://personal-portfolio-demo.firebaseio.com/.settings/rules.json 200
+[debug] [2022-11-17T19:04:57.371Z] <<< [apiv2][body] PUT https://personal-portfolio-demo.firebaseio.com/.settings/rules.json {"status":"ok"}
+[info] +  database: rules syntax for database personal-portfolio-demo is valid 
+[debug] [2022-11-17T19:04:57.374Z] >>> [apiv2][query] GET https://appengine.googleapis.com/v1/apps/personal-portfolio-demo [none]
+[debug] [2022-11-17T19:04:57.878Z] <<< [apiv2][status] GET https://appengine.googleapis.com/v1/apps/personal-portfolio-demo 200
+[debug] [2022-11-17T19:04:57.878Z] <<< [apiv2][body] GET https://appengine.googleapis.com/v1/apps/personal-portfolio-demo {"name":"apps/personal-portfolio-demo","id":"personal-portfolio-demo","authDomain":"gmail.com","locationId":"asia-south1","codeBucket":"staging.personal-portfolio-demo.appspot.com","servingStatus":"SERVING","defaultHostname":"personal-portfolio-demo.el.r.appspot.com","defaultBucket":"personal-portfolio-demo.appspot.com","serviceAccount":"personal-portfolio-demo@appspot.gserviceaccount.com","gcrDomain":"asia.gcr.io","databaseType":"CLOUD_FIRESTORE","featureSettings":{"splitHealthChecks":true,"useContainerOptimizedOs":true}}
+[info] i  firebase.storage: checking storage.rules for compilation errors... 
+[debug] [2022-11-17T19:04:57.885Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo:test [none]
+[debug] [2022-11-17T19:04:57.886Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo:test [omitted]
+[debug] [2022-11-17T19:04:59.613Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo:test 200
+[debug] [2022-11-17T19:04:59.613Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo:test {}
+[info] +  firebase.storage: rules file storage.rules compiled successfully 
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2022-11-17T19:04:59.617Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo:test [none]
+[debug] [2022-11-17T19:04:59.617Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo:test [omitted]
+[debug] [2022-11-17T19:05:01.213Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo:test 200
+[debug] [2022-11-17T19:05:01.213Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo:test {}
+[info] +  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2022-11-17T19:05:01.215Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo [none]
+[debug] [2022-11-17T19:05:01.806Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo 200
+[debug] [2022-11-17T19:05:01.807Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo {"projectId":"personal-portfolio-demo","projectNumber":"10003281612","displayName":"Personal Portfolio","name":"projects/personal-portfolio-demo","resources":{"hostingSite":"personal-portfolio-demo","realtimeDatabaseInstance":"personal-portfolio-demo","storageBucket":"personal-portfolio-demo.appspot.com","locationId":"asia-south1"},"state":"ACTIVE","etag":"1_f89fb02a-d745-4270-85a6-d36e07380be9"}
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2022-11-17T19:05:01.810Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/cloudfunctions.googleapis.com [none]
+[debug] [2022-11-17T19:05:01.810Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/personal-portfolio-demo
+[debug] [2022-11-17T19:05:01.812Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/runtimeconfig.googleapis.com [none]
+[debug] [2022-11-17T19:05:01.812Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/personal-portfolio-demo
+[debug] [2022-11-17T19:05:01.814Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/cloudbuild.googleapis.com [none]
+[debug] [2022-11-17T19:05:01.814Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/cloudbuild.googleapis.com x-goog-quota-user=projects/personal-portfolio-demo
+[debug] [2022-11-17T19:05:01.815Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/artifactregistry.googleapis.com [none]
+[debug] [2022-11-17T19:05:01.815Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/artifactregistry.googleapis.com x-goog-quota-user=projects/personal-portfolio-demo
+[debug] [2022-11-17T19:05:03.903Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/runtimeconfig.googleapis.com 200
+[debug] [2022-11-17T19:05:03.904Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2022-11-17T19:05:03.918Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/cloudbuild.googleapis.com 200
+[debug] [2022-11-17T19:05:03.919Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2022-11-17T19:05:03.953Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/cloudfunctions.googleapis.com 200
+[debug] [2022-11-17T19:05:03.953Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2022-11-17T19:05:03.955Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/artifactregistry.googleapis.com 200
+[debug] [2022-11-17T19:05:03.956Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2022-11-17T19:05:03.957Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo/adminSdkConfig [none]
+[debug] [2022-11-17T19:05:04.811Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo/adminSdkConfig 200
+[debug] [2022-11-17T19:05:04.812Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo/adminSdkConfig {"projectId":"personal-portfolio-demo","databaseURL":"https://personal-portfolio-demo.firebaseio.com","storageBucket":"personal-portfolio-demo.appspot.com","locationId":"asia-south1"}
+[debug] [2022-11-17T19:05:04.813Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/personal-portfolio-demo/configs [none]
+[debug] [2022-11-17T19:05:05.510Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/personal-portfolio-demo/configs 200
+[debug] [2022-11-17T19:05:05.511Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/personal-portfolio-demo/configs {}
+[info] i  functions: preparing codebase default for deployment 
+[debug] [2022-11-17T19:05:05.518Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2022-11-17T19:05:12.884Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^10.2.0",
+    "firebase-functions": "^3.21.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  },
+  "private": true
+}
+[debug] [2022-11-17T19:05:12.884Z] Building nodejs source
+[debug] [2022-11-17T19:05:12.885Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-11-17T19:05:15.698Z] Serving at port 9005
+
+[debug] [2022-11-17T19:05:17.424Z] Got response from /__/functions.yaml {"endpoints":{"uploadFile":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"uploadFile"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-11-17T19:05:17.435Z] shutdown requested via /__/quitquitquit
+
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged G:\kaushik-vekariya\image-cropper-hiren-sojitra\functions (55.35 KB) for uploading 
+[debug] [2022-11-17T19:05:17.549Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/personal-portfolio-demo/locations/-/functions [none]
+[debug] [2022-11-17T19:05:18.475Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/personal-portfolio-demo/locations/-/functions 200
+[debug] [2022-11-17T19:05:18.476Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/personal-portfolio-demo/locations/-/functions {"functions":[{"name":"projects/personal-portfolio-demo/locations/us-central1/functions/helloWorld","httpsTrigger":{"url":"https://us-central1-personal-portfolio-demo.cloudfunctions.net/helloWorld","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"helloWorld","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"personal-portfolio-demo@appspot.gserviceaccount.com","updateTime":"2022-11-16T20:59:39.732Z","versionId":"2","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"5f68ffd3b6b9250060fbdf0f6bf85d02a3f3811a"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-177871575395.us-central1.cloudfunctions.appspot.com/f310a0fa-520b-46f7-9a15-21dd234763b2.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"personal-portfolio-demo\",\"databaseURL\":\"https://personal-portfolio-demo.firebaseio.com\",\"storageBucket\":\"personal-portfolio-demo.appspot.com\",\"locationId\":\"asia-south1\"}","GCLOUD_PROJECT":"personal-portfolio-demo","EVENTARC_CLOUD_EVENT_SOURCE":"projects/personal-portfolio-demo/locations/us-central1/functions/helloWorld"},"runtime":"nodejs16","ingressSettings":"ALLOW_ALL","buildId":"c2e4d76a-d1fc-4d56-874b-6ab5ee5a30a1","buildName":"projects/10003281612/locations/us-central1/builds/c2e4d76a-d1fc-4d56-874b-6ab5ee5a30a1","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/personal-portfolio-demo/locations/us-central1/functions/uploadFile","httpsTrigger":{"url":"https://us-central1-personal-portfolio-demo.cloudfunctions.net/uploadFile","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"uploadFile","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"personal-portfolio-demo@appspot.gserviceaccount.com","updateTime":"2022-11-16T21:01:43.634Z","versionId":"1","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"92d91435b23f988418665f75a075d5c583fd2ebe"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-177871575395.us-central1.cloudfunctions.appspot.com/9e376aa4-5e69-4105-8791-d5560d23ae17.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"personal-portfolio-demo\",\"databaseURL\":\"https://personal-portfolio-demo.firebaseio.com\",\"storageBucket\":\"personal-portfolio-demo.appspot.com\",\"locationId\":\"asia-south1\"}","GCLOUD_PROJECT":"personal-portfolio-demo","EVENTARC_CLOUD_EVENT_SOURCE":"projects/personal-portfolio-demo/locations/us-central1/functions/uploadFile"},"runtime":"nodejs16","ingressSettings":"ALLOW_ALL","buildId":"aec83463-a4ac-47c9-9611-b82f6fe81aaa","buildName":"projects/10003281612/locations/us-central1/builds/aec83463-a4ac-47c9-9611-b82f6fe81aaa","dockerRegistry":"ARTIFACT_REGISTRY"}]}
+[debug] [2022-11-17T19:05:18.477Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/personal-portfolio-demo/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2022-11-17T19:05:20.537Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/personal-portfolio-demo/locations/-/functions 200
+[debug] [2022-11-17T19:05:20.538Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/personal-portfolio-demo/locations/-/functions {}
+[debug] [2022-11-17T19:05:20.543Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo [none]
+[debug] [2022-11-17T19:05:21.324Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo 200
+[debug] [2022-11-17T19:05:21.325Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo {"projectId":"personal-portfolio-demo","projectNumber":"10003281612","displayName":"Personal Portfolio","name":"projects/personal-portfolio-demo","resources":{"hostingSite":"personal-portfolio-demo","realtimeDatabaseInstance":"personal-portfolio-demo","storageBucket":"personal-portfolio-demo.appspot.com","locationId":"asia-south1"},"state":"ACTIVE","etag":"1_17ee8170-e64b-4259-a556-1f5bae5d2bc2"}
+[debug] [2022-11-17T19:05:21.330Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/personal-portfolio-demo/versions [none]
+[debug] [2022-11-17T19:05:21.331Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/personal-portfolio-demo/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-11-17T19:05:23.496Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/personal-portfolio-demo/versions 200
+[debug] [2022-11-17T19:05:23.496Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/personal-portfolio-demo/versions {"name":"projects/10003281612/sites/personal-portfolio-demo/versions/6fcff6077f9b9597","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-11-17T19:05:23.498Z] >>> [apiv2][query] GET https://firebaseremoteconfig.googleapis.com/v1/projects/10003281612/remoteConfig 
+[debug] [2022-11-17T19:05:24.775Z] <<< [apiv2][status] GET https://firebaseremoteconfig.googleapis.com/v1/projects/10003281612/remoteConfig 200
+[debug] [2022-11-17T19:05:24.775Z] <<< [apiv2][body] GET https://firebaseremoteconfig.googleapis.com/v1/projects/10003281612/remoteConfig {"version":{"versionNumber":"3","updateTime":"2022-11-16T21:02:03.641189Z","updateUser":{"email":"hirensojitra007@gmail.com"},"updateOrigin":"REST_API","updateType":"INCREMENTAL_UPDATE"}}
+[debug] [2022-11-17T19:05:24.776Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases pageSize=10&pageToken=
+[debug] [2022-11-17T19:05:26.374Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases 200
+[debug] [2022-11-17T19:05:26.375Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases {"releases":[{"name":"projects/personal-portfolio-demo/releases/cloud.firestore","rulesetName":"projects/personal-portfolio-demo/rulesets/4b25b7f2-e6e6-4db0-8a11-da298087d5d4","createTime":"2019-09-28T07:03:51.217465Z","updateTime":"2022-11-16T20:59:38.080181Z"},{"name":"projects/personal-portfolio-demo/releases/firebase.storage/personal-portfolio-demo.appspot.com","rulesetName":"projects/personal-portfolio-demo/rulesets/2e5be9d2-92fc-4944-9c97-61c42dd7571d","createTime":"2019-09-28T07:03:33.945596Z","updateTime":"2022-11-16T20:59:36.118938Z"}]}
+[debug] [2022-11-17T19:05:26.388Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/rulesets/2e5be9d2-92fc-4944-9c97-61c42dd7571d [none]
+[debug] [2022-11-17T19:05:27.963Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/rulesets/2e5be9d2-92fc-4944-9c97-61c42dd7571d 200
+[debug] [2022-11-17T19:05:27.963Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/rulesets/2e5be9d2-92fc-4944-9c97-61c42dd7571d [omitted]
+[info] i  storage: latest version of storage.rules already up to date, skipping upload... 
+[debug] [2022-11-17T19:05:27.973Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases pageSize=10&pageToken=
+[debug] [2022-11-17T19:05:27.979Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/personal-portfolio-demo/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2022-11-17T19:05:28.576Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/personal-portfolio-demo/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2022-11-17T19:05:28.576Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/personal-portfolio-demo/databases/(default)/collectionGroups/-/indexes {}
+[debug] [2022-11-17T19:05:28.576Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/personal-portfolio-demo/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false [none]
+[debug] [2022-11-17T19:05:28.887Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/personal-portfolio-demo/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false 200
+[debug] [2022-11-17T19:05:28.887Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/personal-portfolio-demo/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false {"fields":[{"name":"projects/personal-portfolio-demo/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[info] +  firestore: deployed indexes in firestore.indexes.json successfully 
+[debug] [2022-11-17T19:05:29.524Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases 200
+[debug] [2022-11-17T19:05:29.525Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases {"releases":[{"name":"projects/personal-portfolio-demo/releases/cloud.firestore","rulesetName":"projects/personal-portfolio-demo/rulesets/4b25b7f2-e6e6-4db0-8a11-da298087d5d4","createTime":"2019-09-28T07:03:51.217465Z","updateTime":"2022-11-16T20:59:38.080181Z"},{"name":"projects/personal-portfolio-demo/releases/firebase.storage/personal-portfolio-demo.appspot.com","rulesetName":"projects/personal-portfolio-demo/rulesets/2e5be9d2-92fc-4944-9c97-61c42dd7571d","createTime":"2019-09-28T07:03:33.945596Z","updateTime":"2022-11-16T20:59:36.118938Z"}]}
+[debug] [2022-11-17T19:05:29.525Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/rulesets/4b25b7f2-e6e6-4db0-8a11-da298087d5d4 [none]
+[debug] [2022-11-17T19:05:31.132Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/rulesets/4b25b7f2-e6e6-4db0-8a11-da298087d5d4 200
+[debug] [2022-11-17T19:05:31.133Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/rulesets/4b25b7f2-e6e6-4db0-8a11-da298087d5d4 [omitted]
+[info] i  firestore: uploading rules firestore.rules... 
+[debug] [2022-11-17T19:05:31.134Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/rulesets [none]
+[debug] [2022-11-17T19:05:31.134Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/rulesets [omitted]
+[debug] [2022-11-17T19:05:32.763Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/rulesets 200
+[debug] [2022-11-17T19:05:32.764Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/rulesets {"name":"projects/personal-portfolio-demo/rulesets/4b3944d8-a932-421b-af77-45f608eb8c9c","source":{"files":[{"content":"rules_version = '2';\nservice firebase.storage {\n  match /b/{bucket}/o {\n    match /{allPaths=**} {\n      allow read, write: if false;\n    }\n  }\n}\n","name":"firestore.rules"}]},"createTime":"2022-11-17T19:05:32.722671Z","metadata":{"services":["firebase.storage"]}}
+[debug] [2022-11-17T19:05:32.764Z] [rules] created ruleset projects/personal-portfolio-demo/rulesets/4b3944d8-a932-421b-af77-45f608eb8c9c
+[debug] [2022-11-17T19:05:32.765Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/personal-portfolio-demo/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2022-11-17T19:05:32.766Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/personal-portfolio-demo/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2022-11-17T19:05:34.054Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/personal-portfolio-demo/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2022-11-17T19:05:34.054Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/personal-portfolio-demo/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/uploads-177871575395.us-central1.cloudfunctions.appspot.com/3abeb209-aa11-412b-8c7d-6d99c7cafe92.zip?GoogleAccessId=service-10003281612@gcf-admin-robot.iam.gserviceaccount.com&Expires=1668713733&Signature=ZfkRp%2BoDDWHjCxxZLsfdCsbmY%2Fu9mc58uxssuAPVGQnm8%2FhP168pbe0dTjtu0xvGvpMj0qx5bacufuU0PswG26o6uG032XX2obsattKt2RvrkhuxGdTvB0%2FWCSTt2DWLYbFR2%2FxTKTk3LTInpgq3TpNAWtnVx9gOqap32ygu%2B242rRx8cef9xicQfaEXvDQ8wrAB9aH9a3isxy38WxDYjrZYMZXqic%2BjvLJ2yHw%2Bk4mjTDBMRYMEEkQqOfiPFruEM1jl73WAoyMK1Oak0uQbRlIC8sI1XCkFlqLuOo6W%2BJMJjY%2FDKBx8nsO12o1tmU1EOt%2FCQYkkx9S%2FZXkUAouDLQ%3D%3D"}
+[debug] [2022-11-17T19:05:34.054Z] >>> [apiv2][query] PUT https://storage.googleapis.com/uploads-177871575395.us-central1.cloudfunctions.appspot.com/3abeb209-aa11-412b-8c7d-6d99c7cafe92.zip GoogleAccessId=service-10003281612%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1668713733&Signature=ZfkRp%2BoDDWHjCxxZLsfdCsbmY%2Fu9mc58uxssuAPVGQnm8%2FhP168pbe0dTjtu0xvGvpMj0qx5bacufuU0PswG26o6uG032XX2obsattKt2RvrkhuxGdTvB0%2FWCSTt2DWLYbFR2%2FxTKTk3LTInpgq3TpNAWtnVx9gOqap32ygu%2B242rRx8cef9xicQfaEXvDQ8wrAB9aH9a3isxy38WxDYjrZYMZXqic%2BjvLJ2yHw%2Bk4mjTDBMRYMEEkQqOfiPFruEM1jl73WAoyMK1Oak0uQbRlIC8sI1XCkFlqLuOo6W%2BJMJjY%2FDKBx8nsO12o1tmU1EOt%2FCQYkkx9S%2FZXkUAouDLQ%3D%3D
+[debug] [2022-11-17T19:05:34.054Z] >>> [apiv2][body] PUT https://storage.googleapis.com/uploads-177871575395.us-central1.cloudfunctions.appspot.com/3abeb209-aa11-412b-8c7d-6d99c7cafe92.zip [stream]
+[debug] [2022-11-17T19:05:35.003Z] <<< [apiv2][status] PUT https://storage.googleapis.com/uploads-177871575395.us-central1.cloudfunctions.appspot.com/3abeb209-aa11-412b-8c7d-6d99c7cafe92.zip 200
+[debug] [2022-11-17T19:05:35.003Z] <<< [apiv2][body] PUT https://storage.googleapis.com/uploads-177871575395.us-central1.cloudfunctions.appspot.com/3abeb209-aa11-412b-8c7d-6d99c7cafe92.zip [omitted]
+[info] +  functions: functions folder uploaded successfully 
+[info] i  hosting[personal-portfolio-demo]: beginning deploy... 
+[info] i  hosting[personal-portfolio-demo]: found 2 files in public 
+[debug] [2022-11-17T19:05:35.009Z] [hosting] uploading with 200 concurrency
+[debug] [2022-11-17T19:05:35.013Z] [hosting] hash cache [cHVibGlj] stored for 2 files
+[debug] [2022-11-17T19:05:35.013Z] [hosting][hash queue][FINAL] {"max":1,"min":0,"avg":0,"active":0,"complete":2,"success":2,"errored":0,"retried":0,"total":2,"elapsed":2}
+[debug] [2022-11-17T19:05:35.014Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/10003281612/sites/personal-portfolio-demo/versions/6fcff6077f9b9597:populateFiles [none]
+[debug] [2022-11-17T19:05:35.014Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/10003281612/sites/personal-portfolio-demo/versions/6fcff6077f9b9597:populateFiles {"files":{"/404.html":"daa499dd96d8229e73235345702ba32f0793f0c8e5c0d30e40e37a5872be57aa","/index.html":"c03ca608c87aaec0bab0aedd0e3f606cfc7efc11056378394c3d7170ded2ff00"}}
+[debug] [2022-11-17T19:05:36.616Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/10003281612/sites/personal-portfolio-demo/versions/6fcff6077f9b9597:populateFiles 200
+[debug] [2022-11-17T19:05:36.616Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/10003281612/sites/personal-portfolio-demo/versions/6fcff6077f9b9597:populateFiles {"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/personal-portfolio-demo/versions/6fcff6077f9b9597/files"}
+[debug] [2022-11-17T19:05:36.616Z] [hosting][populate queue][FINAL] {"max":1604,"min":1604,"avg":1604,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1604}
+[debug] [2022-11-17T19:05:36.617Z] [hosting] uploads queued: 0
+[debug] [2022-11-17T19:05:36.617Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1668711936617}
+[info] +  hosting[personal-portfolio-demo]: file upload complete 
+[debug] [2022-11-17T19:05:36.618Z] [hosting] deploy completed after 1613ms
+[info] i  database: releasing rules... 
+[debug] [2022-11-17T19:05:36.620Z] >>> [apiv2][query] GET https://firebasedatabase.googleapis.com/v1beta/projects/personal-portfolio-demo/locations/-/instances/personal-portfolio-demo [none]
+[debug] [2022-11-17T19:05:37.885Z] <<< [apiv2][status] GET https://firebasedatabase.googleapis.com/v1beta/projects/personal-portfolio-demo/locations/-/instances/personal-portfolio-demo 200
+[debug] [2022-11-17T19:05:37.885Z] <<< [apiv2][body] GET https://firebasedatabase.googleapis.com/v1beta/projects/personal-portfolio-demo/locations/-/instances/personal-portfolio-demo {"name":"projects/10003281612/locations/us-central1/instances/personal-portfolio-demo","project":"projects/10003281612","databaseUrl":"https://personal-portfolio-demo.firebaseio.com","type":"DEFAULT_DATABASE","state":"ACTIVE"}
+[debug] [2022-11-17T19:05:37.886Z] >>> [apiv2][query] PUT https://personal-portfolio-demo.firebaseio.com/.settings/rules.json 
+[debug] [2022-11-17T19:05:37.887Z] >>> [apiv2][body] PUT https://personal-portfolio-demo.firebaseio.com/.settings/rules.json "{\n  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */\n  \"rules\": {\n    \".read\": false,\n    \".write\": false\n  }\n}"
+[debug] [2022-11-17T19:05:38.740Z] <<< [apiv2][status] PUT https://personal-portfolio-demo.firebaseio.com/.settings/rules.json 200
+[debug] [2022-11-17T19:05:38.740Z] <<< [apiv2][body] PUT https://personal-portfolio-demo.firebaseio.com/.settings/rules.json {"status":"ok"}
+[info] +  database: rules for database personal-portfolio-demo released successfully 
+[debug] [2022-11-17T19:05:38.741Z] [rules] releasing firebase.storage/personal-portfolio-demo.appspot.com with ruleset projects/personal-portfolio-demo/rulesets/2e5be9d2-92fc-4944-9c97-61c42dd7571d
+[debug] [2022-11-17T19:05:38.741Z] >>> [apiv2][query] PATCH https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases/firebase.storage/personal-portfolio-demo.appspot.com [none]
+[debug] [2022-11-17T19:05:38.742Z] >>> [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases/firebase.storage/personal-portfolio-demo.appspot.com {"release":{"name":"projects/personal-portfolio-demo/releases/firebase.storage/personal-portfolio-demo.appspot.com","rulesetName":"projects/personal-portfolio-demo/rulesets/2e5be9d2-92fc-4944-9c97-61c42dd7571d"}}
+[debug] [2022-11-17T19:05:40.379Z] <<< [apiv2][status] PATCH https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases/firebase.storage/personal-portfolio-demo.appspot.com 200
+[debug] [2022-11-17T19:05:40.379Z] <<< [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases/firebase.storage/personal-portfolio-demo.appspot.com {"name":"projects/personal-portfolio-demo/releases/firebase.storage/personal-portfolio-demo.appspot.com","rulesetName":"projects/personal-portfolio-demo/rulesets/2e5be9d2-92fc-4944-9c97-61c42dd7571d","createTime":"2019-09-28T07:03:33.945596Z","updateTime":"2022-11-17T19:05:40.365881Z"}
+[debug] [2022-11-17T19:05:40.379Z] [rules] updated release projects/personal-portfolio-demo/releases/firebase.storage/personal-portfolio-demo.appspot.com
+[info] +  storage: released rules storage.rules to firebase.storage 
+[debug] [2022-11-17T19:05:40.380Z] [rules] releasing cloud.firestore with ruleset projects/personal-portfolio-demo/rulesets/4b3944d8-a932-421b-af77-45f608eb8c9c
+[debug] [2022-11-17T19:05:40.380Z] >>> [apiv2][query] PATCH https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases/cloud.firestore [none]
+[debug] [2022-11-17T19:05:40.380Z] >>> [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases/cloud.firestore {"release":{"name":"projects/personal-portfolio-demo/releases/cloud.firestore","rulesetName":"projects/personal-portfolio-demo/rulesets/4b3944d8-a932-421b-af77-45f608eb8c9c"}}
+[debug] [2022-11-17T19:05:42.052Z] <<< [apiv2][status] PATCH https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases/cloud.firestore 200
+[debug] [2022-11-17T19:05:42.052Z] <<< [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases/cloud.firestore {"name":"projects/personal-portfolio-demo/releases/cloud.firestore","rulesetName":"projects/personal-portfolio-demo/rulesets/4b3944d8-a932-421b-af77-45f608eb8c9c","createTime":"2019-09-28T07:03:51.217465Z","updateTime":"2022-11-17T19:05:41.987079Z"}
+[debug] [2022-11-17T19:05:42.052Z] [rules] updated release projects/personal-portfolio-demo/releases/cloud.firestore
+[info] +  firestore: released rules firestore.rules to cloud.firestore 
+[info] i  functions: Skipping the deploy of unchanged functions with experimental support for skipdeployingnoopfunctions 
+[info] 
+The following functions are found in your project but do not exist in your local source code:
+	helloWorld(us-central1)
+
+If you are renaming a function or changing its region, it is recommended that you create the new function first before deleting the old one to prevent event loss. For more info, visit https://firebase.google.com/docs/functions/manage-functions#modify
+
+[debug] [2022-11-17T22:34:32.383Z] ----------------------------------------------------------------------
+[debug] [2022-11-17T22:34:32.385Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\hiren\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-11-17T22:34:32.386Z] CLI Version:   11.16.1
+[debug] [2022-11-17T22:34:32.386Z] Platform:      win32
+[debug] [2022-11-17T22:34:32.387Z] Node Version:  v18.12.1
+[debug] [2022-11-17T22:34:32.388Z] Time:          Fri Nov 18 2022 04:04:32 GMT+0530 (India Standard Time)
+[debug] [2022-11-17T22:34:32.388Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-11-17T22:34:32.417Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2022-11-17T22:34:32.811Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-11-17T22:34:32.811Z] > authorizing via signed-in user (hirensojitra007@gmail.com)
+[debug] [2022-11-17T22:34:32.811Z] [iam] checking project personal-portfolio-demo for permissions ["cloudconfig.configs.get","cloudconfig.configs.update","cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2022-11-17T22:34:32.812Z] > refreshing access token with scopes: []
+[debug] [2022-11-17T22:34:32.813Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-11-17T22:34:32.813Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-11-17T22:34:33.272Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-11-17T22:34:33.273Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-11-17T22:34:33.518Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-portfolio-demo:testIamPermissions [none]
+[debug] [2022-11-17T22:34:33.519Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-portfolio-demo:testIamPermissions x-goog-quota-user=projects/personal-portfolio-demo
+[debug] [2022-11-17T22:34:33.519Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-portfolio-demo:testIamPermissions {"permissions":["cloudconfig.configs.get","cloudconfig.configs.update","cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2022-11-17T22:34:33.555Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2022-11-17T22:34:33.555Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2022-11-17T22:34:34.180Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-portfolio-demo:testIamPermissions 200
+[debug] [2022-11-17T22:34:34.180Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-portfolio-demo:testIamPermissions {"permissions":["cloudconfig.configs.get","cloudconfig.configs.update","cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2022-11-17T22:34:34.181Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/personal-portfolio-demo/serviceAccounts/personal-portfolio-demo@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2022-11-17T22:34:34.181Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/personal-portfolio-demo/serviceAccounts/personal-portfolio-demo@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2022-11-17T22:34:36.361Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/personal-portfolio-demo/serviceAccounts/personal-portfolio-demo@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2022-11-17T22:34:36.361Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/personal-portfolio-demo/serviceAccounts/personal-portfolio-demo@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2022-11-17T22:34:36.362Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo [none]
+[debug] [2022-11-17T22:34:37.269Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo 200
+[debug] [2022-11-17T22:34:37.269Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo {"projectId":"personal-portfolio-demo","projectNumber":"10003281612","displayName":"Personal Portfolio","name":"projects/personal-portfolio-demo","resources":{"hostingSite":"personal-portfolio-demo","realtimeDatabaseInstance":"personal-portfolio-demo","storageBucket":"personal-portfolio-demo.appspot.com","locationId":"asia-south1"},"state":"ACTIVE","etag":"1_f03decf4-dc4a-495b-9f37-1e01b6f3be10"}
+[debug] [2022-11-17T22:34:37.271Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo [none]
+[debug] [2022-11-17T22:34:38.259Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo 200
+[debug] [2022-11-17T22:34:38.259Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo {"projectId":"personal-portfolio-demo","projectNumber":"10003281612","displayName":"Personal Portfolio","name":"projects/personal-portfolio-demo","resources":{"hostingSite":"personal-portfolio-demo","realtimeDatabaseInstance":"personal-portfolio-demo","storageBucket":"personal-portfolio-demo.appspot.com","locationId":"asia-south1"},"state":"ACTIVE","etag":"1_f03decf4-dc4a-495b-9f37-1e01b6f3be10"}
+[info] 
+[info] === Deploying to 'personal-portfolio-demo'...
+[info] 
+[info] i  deploying database, storage, firestore, functions, hosting, remoteconfig 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] +  functions: Finished running predeploy script. 
+[info] i  database: checking rules syntax... 
+[debug] [2022-11-17T22:34:57.839Z] >>> [apiv2][query] GET https://firebasedatabase.googleapis.com/v1beta/projects/personal-portfolio-demo/locations/-/instances/personal-portfolio-demo [none]
+[debug] [2022-11-17T22:34:59.062Z] <<< [apiv2][status] GET https://firebasedatabase.googleapis.com/v1beta/projects/personal-portfolio-demo/locations/-/instances/personal-portfolio-demo 200
+[debug] [2022-11-17T22:34:59.063Z] <<< [apiv2][body] GET https://firebasedatabase.googleapis.com/v1beta/projects/personal-portfolio-demo/locations/-/instances/personal-portfolio-demo {"name":"projects/10003281612/locations/us-central1/instances/personal-portfolio-demo","project":"projects/10003281612","databaseUrl":"https://personal-portfolio-demo.firebaseio.com","type":"DEFAULT_DATABASE","state":"ACTIVE"}
+[debug] [2022-11-17T22:34:59.064Z] >>> [apiv2][query] PUT https://personal-portfolio-demo.firebaseio.com/.settings/rules.json dryRun=true
+[debug] [2022-11-17T22:34:59.064Z] >>> [apiv2][body] PUT https://personal-portfolio-demo.firebaseio.com/.settings/rules.json "{\n  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */\n  \"rules\": {\n    \".read\": false,\n    \".write\": false\n  }\n}"
+[debug] [2022-11-17T22:35:00.349Z] <<< [apiv2][status] PUT https://personal-portfolio-demo.firebaseio.com/.settings/rules.json 200
+[debug] [2022-11-17T22:35:00.349Z] <<< [apiv2][body] PUT https://personal-portfolio-demo.firebaseio.com/.settings/rules.json {"status":"ok"}
+[info] +  database: rules syntax for database personal-portfolio-demo is valid 
+[debug] [2022-11-17T22:35:00.353Z] >>> [apiv2][query] GET https://appengine.googleapis.com/v1/apps/personal-portfolio-demo [none]
+[debug] [2022-11-17T22:35:01.302Z] <<< [apiv2][status] GET https://appengine.googleapis.com/v1/apps/personal-portfolio-demo 200
+[debug] [2022-11-17T22:35:01.302Z] <<< [apiv2][body] GET https://appengine.googleapis.com/v1/apps/personal-portfolio-demo {"name":"apps/personal-portfolio-demo","id":"personal-portfolio-demo","authDomain":"gmail.com","locationId":"asia-south1","codeBucket":"staging.personal-portfolio-demo.appspot.com","servingStatus":"SERVING","defaultHostname":"personal-portfolio-demo.el.r.appspot.com","defaultBucket":"personal-portfolio-demo.appspot.com","serviceAccount":"personal-portfolio-demo@appspot.gserviceaccount.com","gcrDomain":"asia.gcr.io","databaseType":"CLOUD_FIRESTORE","featureSettings":{"splitHealthChecks":true,"useContainerOptimizedOs":true}}
+[info] i  firebase.storage: checking storage.rules for compilation errors... 
+[debug] [2022-11-17T22:35:01.308Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo:test [none]
+[debug] [2022-11-17T22:35:01.308Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo:test [omitted]
+[debug] [2022-11-17T22:35:03.221Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo:test 200
+[debug] [2022-11-17T22:35:03.221Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo:test {}
+[info] +  firebase.storage: rules file storage.rules compiled successfully 
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2022-11-17T22:35:03.237Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo:test [none]
+[debug] [2022-11-17T22:35:03.237Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo:test [omitted]
+[debug] [2022-11-17T22:35:03.839Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo:test 200
+[debug] [2022-11-17T22:35:03.840Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo:test {}
+[info] +  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2022-11-17T22:35:03.844Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo [none]
+[debug] [2022-11-17T22:35:04.834Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo 200
+[debug] [2022-11-17T22:35:04.834Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo {"projectId":"personal-portfolio-demo","projectNumber":"10003281612","displayName":"Personal Portfolio","name":"projects/personal-portfolio-demo","resources":{"hostingSite":"personal-portfolio-demo","realtimeDatabaseInstance":"personal-portfolio-demo","storageBucket":"personal-portfolio-demo.appspot.com","locationId":"asia-south1"},"state":"ACTIVE","etag":"1_f03decf4-dc4a-495b-9f37-1e01b6f3be10"}
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2022-11-17T22:35:04.837Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/cloudfunctions.googleapis.com [none]
+[debug] [2022-11-17T22:35:04.837Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/personal-portfolio-demo
+[debug] [2022-11-17T22:35:04.838Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/runtimeconfig.googleapis.com [none]
+[debug] [2022-11-17T22:35:04.838Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/personal-portfolio-demo
+[debug] [2022-11-17T22:35:04.840Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/cloudbuild.googleapis.com [none]
+[debug] [2022-11-17T22:35:04.840Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/cloudbuild.googleapis.com x-goog-quota-user=projects/personal-portfolio-demo
+[debug] [2022-11-17T22:35:04.841Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/artifactregistry.googleapis.com [none]
+[debug] [2022-11-17T22:35:04.841Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/artifactregistry.googleapis.com x-goog-quota-user=projects/personal-portfolio-demo
+[debug] [2022-11-17T22:35:07.063Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/runtimeconfig.googleapis.com 200
+[debug] [2022-11-17T22:35:07.063Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2022-11-17T22:35:07.071Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/cloudbuild.googleapis.com 200
+[debug] [2022-11-17T22:35:07.073Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2022-11-17T22:35:07.075Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/cloudfunctions.googleapis.com 200
+[debug] [2022-11-17T22:35:07.075Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2022-11-17T22:35:07.079Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/artifactregistry.googleapis.com 200
+[debug] [2022-11-17T22:35:07.079Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/personal-portfolio-demo/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2022-11-17T22:35:07.080Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo/adminSdkConfig [none]
+[debug] [2022-11-17T22:35:07.711Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo/adminSdkConfig 200
+[debug] [2022-11-17T22:35:07.711Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo/adminSdkConfig {"projectId":"personal-portfolio-demo","databaseURL":"https://personal-portfolio-demo.firebaseio.com","storageBucket":"personal-portfolio-demo.appspot.com","locationId":"asia-south1"}
+[debug] [2022-11-17T22:35:07.711Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/personal-portfolio-demo/configs [none]
+[debug] [2022-11-17T22:35:08.662Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/personal-portfolio-demo/configs 200
+[debug] [2022-11-17T22:35:08.662Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/personal-portfolio-demo/configs {}
+[info] i  functions: preparing codebase default for deployment 
+[debug] [2022-11-17T22:35:08.664Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2022-11-17T22:35:16.611Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^10.2.0",
+    "firebase-functions": "^3.21.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  },
+  "private": true
+}
+[debug] [2022-11-17T22:35:16.611Z] Building nodejs source
+[debug] [2022-11-17T22:35:16.612Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-11-17T22:35:19.577Z] Serving at port 9005
+
+[debug] [2022-11-17T22:35:20.911Z] Got response from /__/functions.yaml {"endpoints":{"uploadFile":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"uploadFile"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-11-17T22:35:20.922Z] shutdown requested via /__/quitquitquit
+
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged G:\kaushik-vekariya\image-cropper-hiren-sojitra\functions (55.35 KB) for uploading 
+[debug] [2022-11-17T22:35:21.012Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/personal-portfolio-demo/locations/-/functions [none]
+[debug] [2022-11-17T22:35:22.429Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/personal-portfolio-demo/locations/-/functions 200
+[debug] [2022-11-17T22:35:22.430Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/personal-portfolio-demo/locations/-/functions {"functions":[{"name":"projects/personal-portfolio-demo/locations/us-central1/functions/helloWorld","httpsTrigger":{"url":"https://us-central1-personal-portfolio-demo.cloudfunctions.net/helloWorld","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"helloWorld","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"personal-portfolio-demo@appspot.gserviceaccount.com","updateTime":"2022-11-16T20:59:39.732Z","versionId":"2","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"5f68ffd3b6b9250060fbdf0f6bf85d02a3f3811a"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-177871575395.us-central1.cloudfunctions.appspot.com/f310a0fa-520b-46f7-9a15-21dd234763b2.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"personal-portfolio-demo\",\"databaseURL\":\"https://personal-portfolio-demo.firebaseio.com\",\"storageBucket\":\"personal-portfolio-demo.appspot.com\",\"locationId\":\"asia-south1\"}","GCLOUD_PROJECT":"personal-portfolio-demo","EVENTARC_CLOUD_EVENT_SOURCE":"projects/personal-portfolio-demo/locations/us-central1/functions/helloWorld"},"runtime":"nodejs16","ingressSettings":"ALLOW_ALL","buildId":"c2e4d76a-d1fc-4d56-874b-6ab5ee5a30a1","buildName":"projects/10003281612/locations/us-central1/builds/c2e4d76a-d1fc-4d56-874b-6ab5ee5a30a1","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/personal-portfolio-demo/locations/us-central1/functions/uploadFile","httpsTrigger":{"url":"https://us-central1-personal-portfolio-demo.cloudfunctions.net/uploadFile","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"uploadFile","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"personal-portfolio-demo@appspot.gserviceaccount.com","updateTime":"2022-11-16T21:01:43.634Z","versionId":"1","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"92d91435b23f988418665f75a075d5c583fd2ebe"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-177871575395.us-central1.cloudfunctions.appspot.com/9e376aa4-5e69-4105-8791-d5560d23ae17.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"personal-portfolio-demo\",\"databaseURL\":\"https://personal-portfolio-demo.firebaseio.com\",\"storageBucket\":\"personal-portfolio-demo.appspot.com\",\"locationId\":\"asia-south1\"}","GCLOUD_PROJECT":"personal-portfolio-demo","EVENTARC_CLOUD_EVENT_SOURCE":"projects/personal-portfolio-demo/locations/us-central1/functions/uploadFile"},"runtime":"nodejs16","ingressSettings":"ALLOW_ALL","buildId":"aec83463-a4ac-47c9-9611-b82f6fe81aaa","buildName":"projects/10003281612/locations/us-central1/builds/aec83463-a4ac-47c9-9611-b82f6fe81aaa","dockerRegistry":"ARTIFACT_REGISTRY"}]}
+[debug] [2022-11-17T22:35:22.432Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/personal-portfolio-demo/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2022-11-17T22:35:24.345Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/personal-portfolio-demo/locations/-/functions 200
+[debug] [2022-11-17T22:35:24.345Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/personal-portfolio-demo/locations/-/functions {}
+[debug] [2022-11-17T22:35:24.349Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo [none]
+[debug] [2022-11-17T22:35:25.308Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo 200
+[debug] [2022-11-17T22:35:25.308Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/personal-portfolio-demo {"projectId":"personal-portfolio-demo","projectNumber":"10003281612","displayName":"Personal Portfolio","name":"projects/personal-portfolio-demo","resources":{"hostingSite":"personal-portfolio-demo","realtimeDatabaseInstance":"personal-portfolio-demo","storageBucket":"personal-portfolio-demo.appspot.com","locationId":"asia-south1"},"state":"ACTIVE","etag":"1_f03decf4-dc4a-495b-9f37-1e01b6f3be10"}
+[debug] [2022-11-17T22:35:25.310Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/personal-portfolio-demo/versions [none]
+[debug] [2022-11-17T22:35:25.310Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/personal-portfolio-demo/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-11-17T22:35:27.373Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/personal-portfolio-demo/versions 200
+[debug] [2022-11-17T22:35:27.373Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/personal-portfolio-demo/versions {"name":"projects/10003281612/sites/personal-portfolio-demo/versions/19c3381dd01247ff","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-11-17T22:35:27.375Z] >>> [apiv2][query] GET https://firebaseremoteconfig.googleapis.com/v1/projects/10003281612/remoteConfig 
+[debug] [2022-11-17T22:35:28.455Z] <<< [apiv2][status] GET https://firebaseremoteconfig.googleapis.com/v1/projects/10003281612/remoteConfig 200
+[debug] [2022-11-17T22:35:28.455Z] <<< [apiv2][body] GET https://firebaseremoteconfig.googleapis.com/v1/projects/10003281612/remoteConfig {"version":{"versionNumber":"3","updateTime":"2022-11-16T21:02:03.641189Z","updateUser":{"email":"hirensojitra007@gmail.com"},"updateOrigin":"REST_API","updateType":"INCREMENTAL_UPDATE"}}
+[debug] [2022-11-17T22:35:28.456Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases pageSize=10&pageToken=
+[debug] [2022-11-17T22:35:30.131Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases 200
+[debug] [2022-11-17T22:35:30.131Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases {"releases":[{"name":"projects/personal-portfolio-demo/releases/cloud.firestore","rulesetName":"projects/personal-portfolio-demo/rulesets/4b3944d8-a932-421b-af77-45f608eb8c9c","createTime":"2019-09-28T07:03:51.217465Z","updateTime":"2022-11-17T19:05:41.987079Z"},{"name":"projects/personal-portfolio-demo/releases/firebase.storage/personal-portfolio-demo.appspot.com","rulesetName":"projects/personal-portfolio-demo/rulesets/2e5be9d2-92fc-4944-9c97-61c42dd7571d","createTime":"2019-09-28T07:03:33.945596Z","updateTime":"2022-11-17T19:05:40.365881Z"}]}
+[debug] [2022-11-17T22:35:30.146Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/rulesets/2e5be9d2-92fc-4944-9c97-61c42dd7571d [none]
+[debug] [2022-11-17T22:35:31.945Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/rulesets/2e5be9d2-92fc-4944-9c97-61c42dd7571d 200
+[debug] [2022-11-17T22:35:31.945Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/rulesets/2e5be9d2-92fc-4944-9c97-61c42dd7571d [omitted]
+[info] i  storage: latest version of storage.rules already up to date, skipping upload... 
+[debug] [2022-11-17T22:35:31.948Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases pageSize=10&pageToken=
+[debug] [2022-11-17T22:35:31.949Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/personal-portfolio-demo/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2022-11-17T22:35:32.668Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/personal-portfolio-demo/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2022-11-17T22:35:32.669Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/personal-portfolio-demo/databases/(default)/collectionGroups/-/indexes {}
+[debug] [2022-11-17T22:35:32.670Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/personal-portfolio-demo/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false [none]
+[debug] [2022-11-17T22:35:33.142Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/personal-portfolio-demo/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false 200
+[debug] [2022-11-17T22:35:33.142Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/personal-portfolio-demo/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false {"fields":[{"name":"projects/personal-portfolio-demo/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[info] +  firestore: deployed indexes in firestore.indexes.json successfully 
+[debug] [2022-11-17T22:35:33.626Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases 200
+[debug] [2022-11-17T22:35:33.626Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases {"releases":[{"name":"projects/personal-portfolio-demo/releases/cloud.firestore","rulesetName":"projects/personal-portfolio-demo/rulesets/4b3944d8-a932-421b-af77-45f608eb8c9c","createTime":"2019-09-28T07:03:51.217465Z","updateTime":"2022-11-17T19:05:41.987079Z"},{"name":"projects/personal-portfolio-demo/releases/firebase.storage/personal-portfolio-demo.appspot.com","rulesetName":"projects/personal-portfolio-demo/rulesets/2e5be9d2-92fc-4944-9c97-61c42dd7571d","createTime":"2019-09-28T07:03:33.945596Z","updateTime":"2022-11-17T19:05:40.365881Z"}]}
+[debug] [2022-11-17T22:35:33.626Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/rulesets/4b3944d8-a932-421b-af77-45f608eb8c9c [none]
+[debug] [2022-11-17T22:35:35.246Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/rulesets/4b3944d8-a932-421b-af77-45f608eb8c9c 200
+[debug] [2022-11-17T22:35:35.246Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/rulesets/4b3944d8-a932-421b-af77-45f608eb8c9c [omitted]
+[info] i  firestore: latest version of firestore.rules already up to date, skipping upload... 
+[debug] [2022-11-17T22:35:35.248Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/personal-portfolio-demo/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2022-11-17T22:35:35.248Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/personal-portfolio-demo/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2022-11-17T22:35:36.356Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/personal-portfolio-demo/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2022-11-17T22:35:36.357Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/personal-portfolio-demo/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/uploads-177871575395.us-central1.cloudfunctions.appspot.com/45cb970b-b1c8-4388-8f4b-e6ebee821f67.zip?GoogleAccessId=service-10003281612@gcf-admin-robot.iam.gserviceaccount.com&Expires=1668726336&Signature=umWIkRsvdQQNVVKPbPQXxev0G79Eq2MJAAZ4U%2B%2F4xTfSAUCLchIVzfm9NdNsQhyCT4TkfPgkh4s7jHBx7cHj%2FbJ2rs7tInMQvIbFHxQGqIz7Iqz63aiYvd%2BrKLksUBu22qUi8i02ds1zxAShJknGYh03wHaqaTZ5GxOHC%2Bz%2BOuzYaTQRhu5l9q%2FZJ%2BCdPEtdoUfNJSGZyOkn%2Fn2FTF5npBfKGdXVtm%2FD1Q%2BqiaR4r8oN8vQAhqVncFOYgOgQRO7CUUHIDzMQjPxrJAQ0rSWCF23bkkI1A0Zp6PHwNqkL3DkboluHbPrsGAe2QbGBioCfygQA3yf3yrmHarLe2Rix%2BA%3D%3D"}
+[debug] [2022-11-17T22:35:36.359Z] >>> [apiv2][query] PUT https://storage.googleapis.com/uploads-177871575395.us-central1.cloudfunctions.appspot.com/45cb970b-b1c8-4388-8f4b-e6ebee821f67.zip GoogleAccessId=service-10003281612%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1668726336&Signature=umWIkRsvdQQNVVKPbPQXxev0G79Eq2MJAAZ4U%2B%2F4xTfSAUCLchIVzfm9NdNsQhyCT4TkfPgkh4s7jHBx7cHj%2FbJ2rs7tInMQvIbFHxQGqIz7Iqz63aiYvd%2BrKLksUBu22qUi8i02ds1zxAShJknGYh03wHaqaTZ5GxOHC%2Bz%2BOuzYaTQRhu5l9q%2FZJ%2BCdPEtdoUfNJSGZyOkn%2Fn2FTF5npBfKGdXVtm%2FD1Q%2BqiaR4r8oN8vQAhqVncFOYgOgQRO7CUUHIDzMQjPxrJAQ0rSWCF23bkkI1A0Zp6PHwNqkL3DkboluHbPrsGAe2QbGBioCfygQA3yf3yrmHarLe2Rix%2BA%3D%3D
+[debug] [2022-11-17T22:35:36.360Z] >>> [apiv2][body] PUT https://storage.googleapis.com/uploads-177871575395.us-central1.cloudfunctions.appspot.com/45cb970b-b1c8-4388-8f4b-e6ebee821f67.zip [stream]
+[debug] [2022-11-17T22:35:37.383Z] <<< [apiv2][status] PUT https://storage.googleapis.com/uploads-177871575395.us-central1.cloudfunctions.appspot.com/45cb970b-b1c8-4388-8f4b-e6ebee821f67.zip 200
+[debug] [2022-11-17T22:35:37.383Z] <<< [apiv2][body] PUT https://storage.googleapis.com/uploads-177871575395.us-central1.cloudfunctions.appspot.com/45cb970b-b1c8-4388-8f4b-e6ebee821f67.zip [omitted]
+[info] +  functions: functions folder uploaded successfully 
+[info] i  hosting[personal-portfolio-demo]: beginning deploy... 
+[info] i  hosting[personal-portfolio-demo]: found 2 files in public 
+[debug] [2022-11-17T22:35:37.392Z] [hosting] uploading with 200 concurrency
+[debug] [2022-11-17T22:35:37.400Z] [hosting] hash cache [cHVibGlj] stored for 2 files
+[debug] [2022-11-17T22:35:37.401Z] [hosting][hash queue][FINAL] {"max":1,"min":0,"avg":0,"active":0,"complete":2,"success":2,"errored":0,"retried":0,"total":2,"elapsed":5}
+[debug] [2022-11-17T22:35:37.401Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/10003281612/sites/personal-portfolio-demo/versions/19c3381dd01247ff:populateFiles [none]
+[debug] [2022-11-17T22:35:37.401Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/10003281612/sites/personal-portfolio-demo/versions/19c3381dd01247ff:populateFiles {"files":{"/404.html":"daa499dd96d8229e73235345702ba32f0793f0c8e5c0d30e40e37a5872be57aa","/index.html":"c03ca608c87aaec0bab0aedd0e3f606cfc7efc11056378394c3d7170ded2ff00"}}
+[debug] [2022-11-17T22:35:38.935Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/10003281612/sites/personal-portfolio-demo/versions/19c3381dd01247ff:populateFiles 200
+[debug] [2022-11-17T22:35:38.935Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/10003281612/sites/personal-portfolio-demo/versions/19c3381dd01247ff:populateFiles {"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/personal-portfolio-demo/versions/19c3381dd01247ff/files"}
+[debug] [2022-11-17T22:35:38.935Z] [hosting][populate queue][FINAL] {"max":1538,"min":1538,"avg":1538,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1538}
+[debug] [2022-11-17T22:35:38.935Z] [hosting] uploads queued: 0
+[debug] [2022-11-17T22:35:38.935Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1668724538935}
+[info] +  hosting[personal-portfolio-demo]: file upload complete 
+[debug] [2022-11-17T22:35:38.937Z] [hosting] deploy completed after 1550ms
+[info] i  database: releasing rules... 
+[debug] [2022-11-17T22:35:38.938Z] >>> [apiv2][query] GET https://firebasedatabase.googleapis.com/v1beta/projects/personal-portfolio-demo/locations/-/instances/personal-portfolio-demo [none]
+[debug] [2022-11-17T22:35:39.663Z] <<< [apiv2][status] GET https://firebasedatabase.googleapis.com/v1beta/projects/personal-portfolio-demo/locations/-/instances/personal-portfolio-demo 200
+[debug] [2022-11-17T22:35:39.664Z] <<< [apiv2][body] GET https://firebasedatabase.googleapis.com/v1beta/projects/personal-portfolio-demo/locations/-/instances/personal-portfolio-demo {"name":"projects/10003281612/locations/us-central1/instances/personal-portfolio-demo","project":"projects/10003281612","databaseUrl":"https://personal-portfolio-demo.firebaseio.com","type":"DEFAULT_DATABASE","state":"ACTIVE"}
+[debug] [2022-11-17T22:35:39.668Z] >>> [apiv2][query] PUT https://personal-portfolio-demo.firebaseio.com/.settings/rules.json 
+[debug] [2022-11-17T22:35:39.668Z] >>> [apiv2][body] PUT https://personal-portfolio-demo.firebaseio.com/.settings/rules.json "{\n  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */\n  \"rules\": {\n    \".read\": false,\n    \".write\": false\n  }\n}"
+[debug] [2022-11-17T22:35:40.670Z] <<< [apiv2][status] PUT https://personal-portfolio-demo.firebaseio.com/.settings/rules.json 200
+[debug] [2022-11-17T22:35:40.671Z] <<< [apiv2][body] PUT https://personal-portfolio-demo.firebaseio.com/.settings/rules.json {"status":"ok"}
+[info] +  database: rules for database personal-portfolio-demo released successfully 
+[debug] [2022-11-17T22:35:40.674Z] [rules] releasing firebase.storage/personal-portfolio-demo.appspot.com with ruleset projects/personal-portfolio-demo/rulesets/2e5be9d2-92fc-4944-9c97-61c42dd7571d
+[debug] [2022-11-17T22:35:40.675Z] >>> [apiv2][query] PATCH https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases/firebase.storage/personal-portfolio-demo.appspot.com [none]
+[debug] [2022-11-17T22:35:40.676Z] >>> [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases/firebase.storage/personal-portfolio-demo.appspot.com {"release":{"name":"projects/personal-portfolio-demo/releases/firebase.storage/personal-portfolio-demo.appspot.com","rulesetName":"projects/personal-portfolio-demo/rulesets/2e5be9d2-92fc-4944-9c97-61c42dd7571d"}}
+[debug] [2022-11-17T22:35:42.582Z] <<< [apiv2][status] PATCH https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases/firebase.storage/personal-portfolio-demo.appspot.com 200
+[debug] [2022-11-17T22:35:42.582Z] <<< [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases/firebase.storage/personal-portfolio-demo.appspot.com {"name":"projects/personal-portfolio-demo/releases/firebase.storage/personal-portfolio-demo.appspot.com","rulesetName":"projects/personal-portfolio-demo/rulesets/2e5be9d2-92fc-4944-9c97-61c42dd7571d","createTime":"2019-09-28T07:03:33.945596Z","updateTime":"2022-11-17T22:35:42.486538Z"}
+[debug] [2022-11-17T22:35:42.582Z] [rules] updated release projects/personal-portfolio-demo/releases/firebase.storage/personal-portfolio-demo.appspot.com
+[info] +  storage: released rules storage.rules to firebase.storage 
+[debug] [2022-11-17T22:35:42.583Z] [rules] releasing cloud.firestore with ruleset projects/personal-portfolio-demo/rulesets/4b3944d8-a932-421b-af77-45f608eb8c9c
+[debug] [2022-11-17T22:35:42.583Z] >>> [apiv2][query] PATCH https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases/cloud.firestore [none]
+[debug] [2022-11-17T22:35:42.583Z] >>> [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases/cloud.firestore {"release":{"name":"projects/personal-portfolio-demo/releases/cloud.firestore","rulesetName":"projects/personal-portfolio-demo/rulesets/4b3944d8-a932-421b-af77-45f608eb8c9c"}}
+[debug] [2022-11-17T22:35:43.414Z] <<< [apiv2][status] PATCH https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases/cloud.firestore 200
+[debug] [2022-11-17T22:35:43.415Z] <<< [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/personal-portfolio-demo/releases/cloud.firestore {"name":"projects/personal-portfolio-demo/releases/cloud.firestore","rulesetName":"projects/personal-portfolio-demo/rulesets/4b3944d8-a932-421b-af77-45f608eb8c9c","createTime":"2019-09-28T07:03:51.217465Z","updateTime":"2022-11-17T22:35:43.468378Z"}
+[debug] [2022-11-17T22:35:43.415Z] [rules] updated release projects/personal-portfolio-demo/releases/cloud.firestore
+[info] +  firestore: released rules firestore.rules to cloud.firestore 
+[info] i  functions: Skipping the deploy of unchanged functions with experimental support for skipdeployingnoopfunctions 
+[info] 
+The following functions are found in your project but do not exist in your local source code:
+	helloWorld(us-central1)
+
+If you are renaming a function or changing its region, it is recommended that you create the new function first before deleting the old one to prevent event loss. For more info, visit https://firebase.google.com/docs/functions/manage-functions#modify
+
