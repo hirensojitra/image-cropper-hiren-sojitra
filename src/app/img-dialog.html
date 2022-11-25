@@ -1,9 +1,9 @@
-<div style="width: 20rem">
+<div style="width:25rem; max-width: 100%">
     <div class="custom-file mb-3 mt-4">
         <input type="file" class="form-control" id="validatedCustomFile" required (change)="image.fileChangeEvent($event)" #InputFile />
         <div class="invalid-feedback">Example invalid custom file feedback</div>
     </div>
-    <div>
+    <div class="my-3">
         <image-cropper [imageChangedEvent]="image.imageChangedEvent" [maintainAspectRatio]="true" [containWithinAspectRatio]="image.containWithinAspectRatio" [aspectRatio]="1 / 1" [resizeToWidth]="256" [cropperMinWidth]="128" [onlyScaleDown]="true" [roundCropper]="true"
             [canvasRotation]="image.canvasRotation" [transform]="image.transform" [alignImage]="'center'" [imageURL]="InputFile.value" [style.display]="image.showCropper ? null : 'none'" format="png" (imageCropped)="image.imageCropped($event)" (imageLoaded)="image.imageLoaded()"
             (cropperReady)="image.cropperReady($event)" (loadImageFailed)="image.loadImageFailed()" class="w-100" *ngIf="InputFile.value"></image-cropper>
@@ -11,7 +11,7 @@
     <div class="form-group" *ngIf="InputFile.value">
         <input type="range" min="-180" max="180" value="0" step="0.5" class="w-100 mt-2 mb-2 form-control-range" [(ngModel)]="image.rotation" (input)="image.updateRotation()" />
     </div>
-    <div class="btn-group w-100" role="group" aria-label="Basic example" *ngIf="InputFile.value">
+    <div class="btn-group w-100 my-3" role="group" aria-label="Basic example" *ngIf="InputFile.value">
         <button (click)="image.rotateLeft()" class="btn btn-light" title="Rotate Left" data-toggle="tooltip" data-placement="left">
   <i class="fa fa-rotate-left"></i>
 </button>

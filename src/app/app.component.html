@@ -7,22 +7,19 @@
                 <p><b>ભારતીય જનતા પાર્ટી</b></p>
             </div>
             <div class="col-12 mt-4">
-                <h3>ફેસબુક પોસ્ટ ડાઉનલોડ કરો</h3>
+                <h3>ફેસબુક પોસ્ટ ડાઉનલોડ કરો <small class="d-flex" style="font-size: 70%; line-height: 1;">(તમારાં નામ અને ફોટો સાથે)</small></h3>
             </div>
             <div class="col-md-3 col-sm-4 col-6 mb-3">
-                <img src="assets/img/main/FB/1.png" class="w-100 img-thumbnail" alt="" (click)="selectImg('assets/img/main/FB/1.png','facebook',1)" />
+                <img src="assets/img/main/FB/100-t.png" class="w-100 img-thumbnail" alt="" (click)="selectImg('assets/img/main/FB/100.png','facebook',100)" />
             </div>
-            <div class="col-md-3 col-sm-4 col-6 mb-3">
-                <img src="assets/img/main/FB/3.png" class="w-100 img-thumbnail" alt="" (click)="selectImg('assets/img/main/FB/3.png','facebook',0)" />
-            </div>
+            <!-- <div class="col-md-3 col-sm-4 col-6 mb-3">
+                <img src="assets/img/main/FB/1.png" class="w-100 img-thumbnail" alt="" (click)="selectImg('assets/img/main/FB/1.png','facebook',0)" />
+            </div> -->
             <div class="col-md-3 col-sm-4 col-6 mb-3">
                 <img src="assets/img/main/FB/2.png" class="w-100 img-thumbnail" alt="" (click)="selectImg('assets/img/main/FB/2.png','facebook',0)" />
             </div>
             <div class="col-12 mt-4">
                 <h3>સ્ટોરી અને સ્ટેટસ ડાઉનલોડ કરો<small class="d-flex" style="font-size: 70%; line-height: 1;">(તમારાં નામ અને ફોટો સાથે)</small></h3>
-            </div>
-            <div class="col-md-3 col-sm-4 col-6 mb-3">
-                <img src="assets/img/main/KKV-05.png" class="w-100 img-thumbnail" alt="" (click)="selectImg('assets/img/main/KKV-05.png','story',1)" />
             </div>
             <div class="col-md-3 col-sm-4 col-6 mb-3">
                 <img src="assets/img/main/KKV-01.png" class="w-100 img-thumbnail" alt="" (click)="selectImg('assets/img/main/KKV-01.png','story',1)" />
@@ -75,6 +72,31 @@
             <p class="place">{{(vill[formGroup.controls['taluka'].value+0][formGroup.controls['village'].value+0].viewValue)}}, <small>{{(!formGroup.controls['taluka'].value)?'અમરેલી':'કુંકાવાવ'}}</small><span>વિધાનસભા સીટ, અમરેલી-કુંકાવાવ-વડિયા</span></p>
         </div>
     </div>
+    <div class="content-box container style-100" *ngIf="posterType.style==100">
+        <div class="top">
+            <div class="row h-100">
+                <div class="col-7 align-items-center d-flex">
+                    <div class="msg">
+                        <p><span class="village">{{(vill[formGroup.controls['taluka'].value+0][formGroup.controls['village'].value+0].viewValue)}}</span> માં લોકહિત ના તમામ કાર્યોમાં <span class="kaushik">કૌશિકભાઈ વેકરીયા</span> પાસે થી માત્ર માર્ગદર્શન
+                            નહિ પણ પૂરે પૂરી મદદ પણ મળી છે અને મળતી રહેશે એવો મને ભરોસો છે. આ વાત નો સાક્ષી છું એમ માત્ર હું <span class="name">{{formGroup.controls['name'].value}}</span> જ નહિ પણ મારું આખું ગામ <span class="village">{{(vill[formGroup.controls['taluka'].value+0][formGroup.controls['village'].value+0].viewValue)}}</span>                            બોલે છે, <span class="kaushik">કૌશિકભાઈ</span> નું માત્ર નામ નહિ કામ પણ બોલે છે.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="row h-100">
+                <div class="col-7 text-center">
+                    <img [src]="cropedImg" class="thumb-img">
+                    <div class="intro">
+                        <div class="intro-box">
+                            <p class="name">{{formGroup.controls['name'].value}}</p>
+                            <p class="place">{{(vill[formGroup.controls['taluka'].value+0][formGroup.controls['village'].value+0].viewValue)}}, <small>{{(!formGroup.controls['taluka'].value)?'અમરેલી':'કુંકાવાવ'}}</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Facebook Style - 1 -->
     <!-- <div class="d-flex mt-auto align-items-center w-100 style-1" *ngIf="posterType.style==1">
         <img [src]="cropedImg" class="thumb-img" style="width: 250px;
@@ -111,7 +133,7 @@
                         <input matInput placeholder="તમારું નામ અહી લખો" formControlName="name">
                     </mat-form-field>
                     <mat-form-field class="form-element">
-                        <mat-label>Taluko</mat-label>
+                        <mat-label>તાલુકો</mat-label>
                         <mat-select formControlName="taluka">
                             <mat-option [value]="0">અમરેલી</mat-option>
                             <mat-option [value]="1">કુકાવાવ</mat-option>

@@ -110,6 +110,7 @@ image-cropper {
     &.facebook {
         width: 940px;
         height: 788px;
+        background-size: 100%;
         .content-box {
             display: flex;
             margin-top: auto;
@@ -117,6 +118,72 @@ image-cropper {
             width: 100%;
             .text-box {
                 flex-grow: 1;
+            }
+            &.style-100 {
+                height: 100%;
+                overflow: hidden;
+                display: flex;
+                align-items: stretch;
+                justify-content: stretch;
+                flex-direction: column;
+                font-family: "Hind Vadodara", sans-serif;
+                padding: 0 86px 0 50px;
+                .top {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: stretch;
+                    align-items: stretch;
+                    flex-grow: 1;
+                    .msg {
+                        font-size: 26px;
+                        font-weight: 600;
+                        color: #fff;
+                        text-shadow: 0 0 10px #000;
+                        text-align: center;
+                        .village,
+                        .name {
+                            font-weight: 700;
+                        }
+                        .kaushik {
+                            font-size: 30px;
+                            white-space: nowrap;
+                            font-weight: 700;
+                            color: #fffF00;
+                        }
+                    }
+                }
+                .bottom {
+                    display: flex;
+                    justify-content: stretch;
+                    align-items: stretch;
+                    flex-direction: column;
+                    .thumb-img {
+                        max-width: 200px;
+                        margin: 10px auto;
+                    }
+                    .intro {
+                        flex-grow: 1;
+                        .intro-box {
+                            display: block;
+                            /* background: #333; */
+                            color: #fff;
+                            padding: 20px;
+                            width: auto;
+                            margin-bottom: 46px;
+                            p {
+                                margin: 0;
+                                &.name {
+                                    font-weight: 700;
+                                    font-size: 25px;
+                                }
+                                &.place {
+                                    font-size: 20px;
+                                    font-weight: 500;
+                                }
+                            }
+                        }
+                    }
+                }
             }
             &.style-0 {
                 .text-box {

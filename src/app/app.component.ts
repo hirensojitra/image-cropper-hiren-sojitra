@@ -49,6 +49,8 @@ export class AppComponent implements OnInit {
   cropedImg: string = '';
   imgSelected: string = '';
   amreli: Village[] = [
+    { viewValue: 'અમરેલી શહેર' },
+    { viewValue: 'જેસિંગપરા' },
     { viewValue: 'અમરપુર વરૂડી' },
     { viewValue: 'અમરેલી' },
     { viewValue: 'આંકડીયા નાના' },
