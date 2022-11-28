@@ -233,7 +233,7 @@ export class AppComponent implements OnInit {
   selector: 'img-dialog',
   templateUrl: 'img-dialog.html',
 })
-export class DialogOverviewExampleDialog {
+export class DialogOverviewExampleDialog implements OnInit{
   constructor(
     public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
@@ -242,5 +242,8 @@ export class DialogOverviewExampleDialog {
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+  ngOnInit(): void {
+    this.image.toggleContainWithinAspectRatio()
   }
 }

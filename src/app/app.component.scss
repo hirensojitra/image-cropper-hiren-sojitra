@@ -119,6 +119,41 @@ image-cropper {
             .text-box {
                 flex-grow: 1;
             }
+            &.style-5 {
+                display: flex;
+                width: 320px;
+                height: 100%;
+                margin-left: 164px;
+                flex-direction: column;
+                padding: 0px;
+                .thumb-img {
+                    max-width: calc(100% - 84px);
+                    margin: 22px 42px 17px;
+                    border: 5px solid #ccc;
+                    margin-top: 266px;
+                    border-radius: 0;
+                }
+                .text-box {
+                    flex-grow: 0;
+                    font-family: "Hind Vadodara", sans-serif;
+                    color: #000;
+                    width: 100%;
+                    text-align: center;
+                    margin-top: 0px;
+                    margin-bottom: 35px;
+                    .name {
+                        margin: 0;
+                        font-size: 26px;
+                        font-weight: 700;
+                    }
+                    .place {
+                        margin: 0;
+                        font-size: 20px;
+                        color: #555;
+                        font-weight: 600;
+                    }
+                }
+            }
             &.style-4 {
                 display: flex;
                 width: 281px;

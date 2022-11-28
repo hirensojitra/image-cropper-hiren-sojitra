@@ -10,6 +10,13 @@
                 <h3>ફેસબુક પોસ્ટ ડાઉનલોડ કરો <small class="d-flex" style="font-size: 70%; line-height: 1;">(તમારાં નામ અને ફોટો સાથે)</small></h3>
             </div>
             <div class="col-md-3 col-sm-4 col-6 mb-3">
+                <img src="assets/img/main/FB/6.jpg" class="w-100 img-thumbnail" alt="" (click)="selectImg('assets/img/main/FB/6.jpg','facebook',4)" />
+            </div>
+            <div class="col-md-3 col-sm-4 col-6 mb-3">
+                <img src="assets/img/main/FB/9.jpg" class="w-100 img-thumbnail" alt="" (click)="selectImg('assets/img/main/FB/9.jpg','facebook',5)" />
+                <p class="mt-2">મારો મત નહી જાય એળે એ જ વિશ્વાસ થી કૌશિક વેકરીયા ને ફાળે</p>
+            </div>
+            <div class="col-md-3 col-sm-4 col-6 mb-3">
                 <img src="assets/img/main/FB/4t.png" class="w-100 img-thumbnail" alt="" (click)="selectImg('assets/img/main/FB/4.png','facebook',4)" />
             </div>
             <div class="col-md-3 col-sm-4 col-6 mb-3">
@@ -42,6 +49,12 @@
 
             <div class="col-12 mt-4">
                 <h3>પ્રોફાઈલ ફોટો ડાઉનલોડ કરો</h3>
+            </div>
+            <div class="col-md-3 col-sm-4 col-6 mb-3">
+                <a href="assets/img/main/DP/5.jpg" download="Kaushik Vekariya - 05" target="_blank"><img src="assets/img/main/DP/5.jpg" class="w-100 img-thumbnail" alt="" /></a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-6 mb-3">
+                <a href="assets/img/main/DP/4.jpg" download="Kaushik Vekariya - 04" target="_blank"><img src="assets/img/main/DP/4.jpg" class="w-100 img-thumbnail" alt="" /></a>
             </div>
             <div class="col-md-3 col-sm-4 col-6 mb-3">
                 <a href="assets/img/main/DP/1.jpg" download="Kaushik Vekariya - 01" target="_blank"><img src="assets/img/main/DP/1.jpg" class="w-100 img-thumbnail" alt="" /></a>
@@ -79,6 +92,13 @@
         </div>
     </div>
     <div class="content-box style-4" *ngIf="posterType.style==4">
+        <img [src]="cropedImg" class="thumb-img">
+        <div class="text-box">
+            <p class="name">{{formGroup.controls['name'].value}}</p>
+            <p class="place">{{(vill[formGroup.controls['taluka'].value+0][formGroup.controls['village'].value+0].viewValue)}}, <small>{{(!formGroup.controls['taluka'].value)?'અમરેલી':'કુંકાવાવ'}}</small></p>
+        </div>
+    </div>
+    <div class="content-box style-5" *ngIf="posterType.style==5">
         <img [src]="cropedImg" class="thumb-img">
         <div class="text-box">
             <p class="name">{{formGroup.controls['name'].value}}</p>
